@@ -16,8 +16,9 @@ method configurarJuego(){
 	game.title("CarpinchoGaucho")
 	game.width(20)
 	game.height(20)
-	game.cellSize(1)
-    }   
+	//game.cellSize(50)
+	game.boardGround("campo.jpeg")
+    }
  
 method agregarPersonajes(){
 	  game.addVisual(carpincho)
@@ -33,7 +34,10 @@ method configurarTeclas(){
 	}
 
 method configurarAcciones(){
-	game.onTick(5000, "mover aleatoriamente", { aleatorio.nuevaPosicion()})
+	game.onTick(5000, "mover mate aleatoriamente", {mate.movete()})
+	game.onTick(15000, "mover mate de oro aleatoriamente", {mateDeOro.movete() 
+	                                                     game.addVisual(mateDeOro)})
+	game.onTick(500, "mover yaguarete", {yaguarete.perseguirCarpincho()})                                                     
 	game.onCollideDo(carpincho,{visualColisionado=>visualColisionado.chocasteConCarpincho()})
 	}
 }
