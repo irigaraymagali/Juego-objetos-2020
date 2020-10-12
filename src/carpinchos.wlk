@@ -14,7 +14,7 @@ method iniciar() {
 	
 method configurarJuego(){
 	game.title("CarpinchoGaucho")
-	game.width(20)
+	game.width(30)
 	game.height(20)
 	//game.cellSize(50)
 	game.boardGround("campo.jpeg")
