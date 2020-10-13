@@ -16,7 +16,7 @@ method configurarJuego(){
 	game.title("CarpinchoGaucho")
 	game.width(30)
 	game.height(20)
-	//game.cellSize(50)
+	game.cellSize(50)
 	game.boardGround("campo.jpeg")
     }
  
@@ -29,8 +29,12 @@ method agregarPersonajes(){
 method configurarTeclas(){
 		keyboard.w().onPressDo({carpincho.moverseA(carpincho.position().up(1))})
 		keyboard.s().onPressDo({carpincho.moverseA(carpincho.position().down(1))})
-		keyboard.a().onPressDo({carpincho.moverseA(carpincho.position().left(1))})
-		keyboard.d().onPressDo({carpincho.moverseA(carpincho.position().right(1))})
+		keyboard.a().onPressDo({carpincho.moverseA(carpincho.position().left(1))
+			carpincho.image("carpincho50 girado.png")
+		})
+		keyboard.d().onPressDo({carpincho.moverseA(carpincho.position().right(1))
+			carpincho.image("carpincho50.png")
+		})
 	}
 
 method configurarAcciones(){

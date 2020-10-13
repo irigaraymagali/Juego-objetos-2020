@@ -4,7 +4,8 @@ import movimientos.*
 object carpincho{
 	var position = game.center()
 	
-	method image() = "Carpincho1.png"
+	var property image = "Carpincho50.png"
+	
 	method position() = position
 	
 	method moverseA(nuevaPosicion){
@@ -16,8 +17,8 @@ object carpincho{
 
 object yaguarete{
 	var position = game.at (0,0)
+	var property image = "imagenYaguarete50.png"
 	method position() = position
-	method image() = "imagenYaguarete.jpg"
 	method moverseA(nuevaPosicion){
 		position = nuevaPosicion
 	}
@@ -33,10 +34,12 @@ object yaguarete{
 		  }else{
 			
 		      if(carpincho.position().x() > self.position().x()){
-			   self.moverseA(self.position().right(1))} 
+			   self.moverseA(self.position().right(1))
+			   self.image("imagenYaguarete50.png")} 
 			
 		         else{
-			      self.moverseA(self.position().left(1))} 
+			      self.moverseA(self.position().left(1))
+			      self.image("imagenYaguarete50 girado.png")} 
 	          }				
 	}
 	
@@ -52,7 +55,7 @@ object yaguarete{
 object mate {
 	const movimiento = aleatorio
 
-	method image() = "mate.png"
+	method image() = "mate50.png"
 	
 	method position() = movimiento.posicion()
 	
@@ -67,7 +70,7 @@ object mate {
 object mateDeOro {
 	const movimiento = aleatorio
 
-	method image() = "mateOro.png"
+	method image() = "mateOro50.png"
 	
 	method position() = movimiento.posicion()
 	
@@ -81,7 +84,7 @@ object mateDeOro {
 }
 
 object puntos {
-	var puntos = 0
+	var property puntos = 0
 	// Contador en pantalla ?
 	method suma(puntosObtenidos){
 		puntos = puntos + puntosObtenidos
