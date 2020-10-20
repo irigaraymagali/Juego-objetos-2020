@@ -52,7 +52,7 @@ object yaguarete{
 	}
 }
 
-object mate {
+class Mate {
 	const movimiento = aleatorio
 
 	method image() = "mate50.png"
@@ -67,18 +67,11 @@ object mate {
 	}
 }
 
-object mateDeOro {
-	const movimiento = aleatorio
+class MateDeOro inherits Mate {
 
-	method image() = "mateOro50.png"
+	override method image() = "mateOro50.png"
 	
-	method position() = movimiento.posicion()
-	
-	method movete() {
-		movimiento.nuevaPosicion()
-	}
-	
-	method chocasteConCarpincho(){
+	override method chocasteConCarpincho(){
 		puntos.suma(150)
 	}
 }

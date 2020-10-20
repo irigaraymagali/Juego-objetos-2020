@@ -1,6 +1,6 @@
 import wollok.game.*
-import personajes.*
 import movimientos.*
+import personajes.*
 
 object juegoCarpinchoGaucho  {     
 	
@@ -23,7 +23,7 @@ method configurarJuego(){
 method agregarPersonajes(){
 	  game.addVisual(carpincho)
 	  game.addVisual(yaguarete)
-	  game.addVisual(mate)
+	  //game.addVisual(mate)
     } 
   
 method configurarTeclas(){
@@ -38,9 +38,9 @@ method configurarTeclas(){
 	}
 
 method configurarAcciones(){
-	game.onTick(5000, "mover mate aleatoriamente", {mate.movete()})
-	game.onTick(15000, "mover mate de oro aleatoriamente", {mateDeOro.movete() 
-	                                                     game.addVisual(mateDeOro)})
+	game.onTick(5000, "mover mate aleatoriamente", {var mate = new Mate() game.addVisual(mate) mate.movete()})
+	game.onTick(15000, "mover mate de oro aleatoriamente", {var mateDeOro = new MateDeOro() game.addVisual(mateDeOro) mateDeOro.movete() 
+	                                                     })
 	game.onTick(500, "mover yaguarete", {yaguarete.perseguirCarpincho()})                                                     
 	game.onCollideDo(carpincho,{visualColisionado=>visualColisionado.chocasteConCarpincho()})
 	}
