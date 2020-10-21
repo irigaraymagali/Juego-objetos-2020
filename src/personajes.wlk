@@ -47,13 +47,14 @@ object yaguarete{
 	method chocasteConCarpincho(){
 		//Termina juego
 		carpincho.perdiste()
-		game.schedule(5000,{game.stop()})
+		game.schedule(1000,{game.stop()})
 		game.say(self, "¡Perdiste!")
 	}
 }
 
+
 class Mate {
-	const movimiento = aleatorio
+	const movimiento = aleatoriomate
 
 	method image() = "mate50.png"
 	
@@ -61,19 +62,33 @@ class Mate {
 	
 	method chocasteConCarpincho(){
 		puntos.suma(50)
+		game.removeVisual(self)
 	}
+	method movete(){
+		movimiento.nuevaPosicion()
+	}
+
+}
+
+class MateDeOro {
+	const movimiento = aleatoriomatedorado
+
+	method image() = "mateOro50.png"
+	
+	method position() = movimiento.posicion()
+	
+	method chocasteConCarpincho(){
+		puntos.suma(150)
+		game.removeVisual(self)
+	}
+	
 	method movete(){
 		movimiento.nuevaPosicion()
 	}
 }
 
-class MateDeOro inherits Mate {
-
-	override method image() = "mateOro50.png"
-	
-	override method chocasteConCarpincho(){
-		puntos.suma(150)
-	}
+class bordeMapa{
+	image() = "borde.png" 
 }
 
 object puntos {

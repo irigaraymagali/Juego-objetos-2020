@@ -38,9 +38,8 @@ method configurarTeclas(){
 	}
 
 method configurarAcciones(){
-	game.onTick(5000, "mover mate aleatoriamente", {var mate = new Mate() game.addVisual(mate) mate.movete()})
-	game.onTick(15000, "mover mate de oro aleatoriamente", {var mateDeOro = new MateDeOro() game.addVisual(mateDeOro) mateDeOro.movete() 
-	                                                     })
+	game.onTick(5000, "mover mate aleatoriamente", {const mate = new Mate() game.addVisual(mate) mate.movete()})
+	game.onTick(15000, "mover mate de oro aleatoriamente", {const mateDeOro = new MateDeOro() game.addVisual(mateDeOro) mateDeOro.movete()})
 	game.onTick(500, "mover yaguarete", {yaguarete.perseguirCarpincho()})                                                     
 	game.onCollideDo(carpincho,{visualColisionado=>visualColisionado.chocasteConCarpincho()})
 	}

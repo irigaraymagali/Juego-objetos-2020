@@ -1,6 +1,6 @@
 import wollok.game.*
 
-object aleatorio {
+class Aleatorio {
 	var posicion = game.at(8, 8)
 
 	method posicion() = posicion
@@ -13,3 +13,6 @@ object aleatorio {
 		posicion = game.at(x, y)
 	}
 }
+
+const aleatoriomate = new Aleatorio()
+const aleatoriomatedorado = new Aleatorio()
