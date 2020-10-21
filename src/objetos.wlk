@@ -16,6 +16,8 @@ class Mate {
 	method movete(){
 		movimiento.nuevaPosicion()
 	}
+	method chocasteConYaguarete(){
+	}
 
 }
 

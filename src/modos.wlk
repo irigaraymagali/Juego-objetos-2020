@@ -3,7 +3,7 @@ import movimientos.*
 import personajes.*
 import objetos.*
 
-object unJugador{
+object modoCarpincho{
 	method configurarTeclas(){
 		keyboard.w().onPressDo({carpincho.moverseA(carpincho.position().up(1))})
 		keyboard.s().onPressDo({carpincho.moverseA(carpincho.position().down(1))})
@@ -21,7 +21,9 @@ method configurarAcciones(){
 	game.onTick(500, "mover yaguarete", {yaguarete.perseguirCarpincho()})                                                     
 	game.onCollideDo(carpincho,{visualColisionado=>visualColisionado.chocasteConCarpincho()})
 	}
+		
 }
+
 
 object dosJugadores{
 	
@@ -56,3 +58,20 @@ method configurarAcciones(){
 	}
 }
 
+object modoCazar{
+	method configurarTeclas(){
+		keyboard.w().onPressDo({yaguarete.moverseA(yaguarete.position().up(1))})
+		keyboard.s().onPressDo({yaguarete.moverseA(yaguarete.position().down(1))})
+		keyboard.a().onPressDo({yaguarete.moverseA(yaguarete.position().left(1))
+			yaguarete.image("imagenYaguarete50 girado.png")})
+		keyboard.d().onPressDo({yaguarete.moverseA(yaguarete.position().right(1))
+			yaguarete.image("imagenYaguarete50.png")})
+	}
+
+method configurarAcciones(){
+	game.onTick(5000, "mover manzana aleatoriamente", {manzana.movete() game.addVisual(manzana)})
+	game.onTick(200, "mover carpincho", {carpincho.perseguirManzanaYHuir()})                                                     
+	game.onCollideDo(yaguarete,{visualColisionado=>visualColisionado.chocasteConYaguarete()})
+	}
+		
+}

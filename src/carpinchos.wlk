@@ -5,7 +5,7 @@ import objetos.*
 import modos.*
 
 object juegoCarpinchoGaucho  {     
-	var modo = dosJugadores
+	var modo = modoCarpincho //MODOS: modoCarpincho, dosJugadores o modoCazar
 method iniciar() {
 		self.configurarJuego()
 		self.agregarPersonajes()
