@@ -1,5 +1,6 @@
 import wollok.game.*
 import movimientos.*
+import objetos.*
 
 object carpincho{
 	var position = game.center()
@@ -52,45 +53,6 @@ object yaguarete{
 	}
 }
 
-
-class Mate {
-	const movimiento = aleatoriomate
-
-	method image() = "mate50.png"
-	
-	method position() = movimiento.posicion()
-	
-	method chocasteConCarpincho(){
-		puntos.suma(50)
-		game.removeVisual(self)
-	}
-	method movete(){
-		movimiento.nuevaPosicion()
-	}
-
-}
-
-class MateDeOro {
-	const movimiento = aleatoriomatedorado
-
-	method image() = "mateOro50.png"
-	
-	method position() = movimiento.posicion()
-	
-	method chocasteConCarpincho(){
-		puntos.suma(150)
-		game.removeVisual(self)
-	}
-	
-	method movete(){
-		movimiento.nuevaPosicion()
-	}
-}
-
-class bordeMapa{
-	image() = "borde.png" 
-}
-
 object puntos {
 	var property puntos = 0
 	// Contador en pantalla ?
@@ -98,3 +60,4 @@ object puntos {
 		puntos = puntos + puntosObtenidos
 	}
 }
+

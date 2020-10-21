@@ -1,20 +1,24 @@
 import wollok.game.*
 import movimientos.*
 import personajes.*
+import objetos.*
+import modos.*
 
 object juegoCarpinchoGaucho  {     
-	
+	var modo = dosJugadores
 method iniciar() {
 		self.configurarJuego()
 		self.agregarPersonajes()
-		self.configurarTeclas()
-		self.configurarAcciones()
+		modo.configurarTeclas()
+		modo.configurarAcciones()
+		
+		//self.configurarBorde()
 		game.start()
 	}
 	
 method configurarJuego(){
 	game.title("CarpinchoGaucho")
-	game.width(30)
+	game.width(20)
 	game.height(20)
 	game.cellSize(50)
 	game.boardGround("campo.jpeg")
@@ -23,24 +27,16 @@ method configurarJuego(){
 method agregarPersonajes(){
 	  game.addVisual(carpincho)
 	  game.addVisual(yaguarete)
-	  //game.addVisual(mate)
-    } 
+    }
   
-method configurarTeclas(){
-		keyboard.w().onPressDo({carpincho.moverseA(carpincho.position().up(1))})
-		keyboard.s().onPressDo({carpincho.moverseA(carpincho.position().down(1))})
-		keyboard.a().onPressDo({carpincho.moverseA(carpincho.position().left(1))
-			carpincho.image("carpincho50 girado.png")
-		})
-		keyboard.d().onPressDo({carpincho.moverseA(carpincho.position().right(1))
-			carpincho.image("carpincho50.png")
-		})
-	}
 
-method configurarAcciones(){
-	game.onTick(5000, "mover mate aleatoriamente", {const mate = new Mate() game.addVisual(mate) mate.movete()})
-	game.onTick(15000, "mover mate de oro aleatoriamente", {const mateDeOro = new MateDeOro() game.addVisual(mateDeOro) mateDeOro.movete()})
-	game.onTick(500, "mover yaguarete", {yaguarete.perseguirCarpincho()})                                                     
-	game.onCollideDo(carpincho,{visualColisionado=>visualColisionado.chocasteConCarpincho()})
-	}
+/*method configurarBorde(){
+	const borde1 = new BordeMapa(position = game.at(0,0))
+	//const borde2 = new BordeMapa(position = game.at(0,1))
+	
+	game.addVisual(borde1)
+	//game.addVisual(borde2)
+	
+}
+*/
 }

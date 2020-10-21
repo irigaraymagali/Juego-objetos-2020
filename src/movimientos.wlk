@@ -1,4 +1,5 @@
 import wollok.game.*
+import objetos.*
 
 class Aleatorio {
 	var posicion = game.at(8, 8)
