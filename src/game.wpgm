@@ -10,3 +10,9 @@ program game {
 	start.iniciar()
 	//juegoCarpinchoGaucho.iniciar()
 }
+
+/* TODO 
+ * sonidos
+ * paredes (Sobre las paredes: en ese último link, al final, tira un punta para hacer fácil la construcción del mapa (instanciación de paredes). Para bloquear el paso, mi recomendación es evaluar antes de moverese si la posición a la cuál se quiere mover está libre / es traspasable / como le quieran decir. (No enccontré nada sobre esto, pero estaría bueno agregarla a esa documentación que comenzaron los pibes de UNQ, si alguien escribe algo al respecto para colaborar avise que les ayudamos a ayudar!!))
+ * cambio de fondo: No, el ground o boardground no se actualiza una vez iniciado el juego. Para eso el hackazo es poner un objeto "fondo" en la posición (0@0) o (-1@-1) con una imagen grande que ocupe todo el fondo. Aseguren de que sea el primer objeto que pongan en la pantalla, así los otros aparecen arriba y no son tapados.
+ * */

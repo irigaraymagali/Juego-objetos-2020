@@ -5,7 +5,7 @@ import personajes.*
 class Mate {
 	const property posicion
 
-	method image() = "mate50.png"
+	method image() = "mate.png"
 	
 	method position() = posicion
 	
@@ -18,7 +18,7 @@ class Mate {
 class MateDeOro {
 	const property posicion
 
-	method image() = "mateOro50.png"
+	method image() = "mate de oro.png"
 	
 	method position() = posicion
 	
@@ -41,6 +41,24 @@ class Alfajor {
 		game.removeVisual(self)
 	}
 }
+
+object manzana {
+	const movimiento = aleatorio
+	var property position = movimiento.posicion()
+	
+	var property image = "manzana.png"
+	
+	method moverseA(nuevaPosicion){
+		position = nuevaPosicion
+	}
+	method movete(){
+		movimiento.nuevaPosicion()
+	}
+	method chocasteConYaguarete(){
+		game.removeVisual(self)
+	}
+}
+
 
 class BordeMapa{
 	

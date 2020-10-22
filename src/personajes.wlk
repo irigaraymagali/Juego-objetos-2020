@@ -5,7 +5,7 @@ import objetos.*
 object carpincho{
 	var position = game.center()
 	
-	var property image = "Carpincho50.png"
+	var property image = "carpincho right.png"
 	
 	method position() = position
 	
@@ -27,12 +27,12 @@ object carpincho{
 			
 		      if(manzana.position().x() > self.position().x()){
 			   self.moverseA(self.position().right(1))
-			   self.image("Carpincho50.png")
+			   self.image("carpincho right.png")
 			   } 
 			
 		         else{
 			      self.moverseA(self.position().left(1))
-			      self.image("Carpincho50 girado.png")
+			      self.image("carpincho left.png")
 			      } 
 	          }	
 	          
@@ -51,12 +51,12 @@ object carpincho{
 			
 		      if(yaguarete.position().x() > self.position().x()){
 			   self.moverseA(self.position().left(1))
-			   self.image("Carpincho50.png")
+			   self.image("carpincho right.png")
 			   } 
 			
 		         else{
 			      self.moverseA(self.position().right(1))
-			      self.image("Carpincho50 girado.png")
+			      self.image("carpincho right.png")
 			      } 
 	          }	
 	}	
@@ -71,7 +71,7 @@ object carpincho{
 
 object yaguarete {
 	var position = game.at (0,0)
-	var property image = "imagenYaguarete50.png"
+	var property image = "yaguarete right.png"
 	
 	method position() = position
 	
@@ -92,11 +92,11 @@ object yaguarete {
 			
 		      if(carpincho.position().x() > self.position().x()){
 			   self.moverseA(self.position().right(1))
-			   self.image("imagenYaguarete50.png")} 
+			   self.image("yaguarete right.png")} 
 			
 		         else{
 			      self.moverseA(self.position().left(1))
-			      self.image("imagenYaguarete50 girado.png")} 
+			      self.image("yaguarete left.png")} 
 	          }				
 	}
 	
@@ -108,22 +108,7 @@ object yaguarete {
 	}
 }
 
-object manzana {
-	const movimiento = aleatorio
-	var property position = movimiento.posicion()
-	
-	var property image = "manzana.png"
-	
-	method moverseA(nuevaPosicion){
-		position = nuevaPosicion
-	}
-	method movete(){
-		movimiento.nuevaPosicion()
-	}
-	method chocasteConYaguarete(){
-		game.removeVisual(self)
-	}
-}
+
 
 
 

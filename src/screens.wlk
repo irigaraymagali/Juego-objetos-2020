@@ -8,7 +8,7 @@ import carpinchos.*
 object carpinchoSelector{
 	var position = game.at(4, 10)
 	
-	var property image = "Carpincho50.png"
+	var property image = "carpincho right.png"
 	
 	method position() = position
 	
@@ -80,14 +80,7 @@ object start{
     }
 	
 	method configurarTeclas(){
-		keyboard.w().onPressDo({carpinchoSelector.moverseA(carpinchoSelector.position().up(1))})
-		keyboard.s().onPressDo({carpinchoSelector.moverseA(carpinchoSelector.position().down(1))})
-		keyboard.a().onPressDo({carpinchoSelector.moverseA(carpinchoSelector.position().left(1))
-			carpinchoSelector.image("carpincho50 girado.png")
-		})
-		keyboard.d().onPressDo({carpinchoSelector.moverseA(carpinchoSelector.position().right(1))
-			carpinchoSelector.image("carpincho50.png")
-		})
+		keyConfig.jugador1(carpinchoSelector)
 	}
 	
 	method agregarPersonajes(){

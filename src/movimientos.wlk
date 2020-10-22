@@ -1,18 +1,38 @@
 import wollok.game.*
 import objetos.*
 
+object keyConfig{
+	method jugador1(personaje){
+		keyboard.w().onPressDo({personaje.moverseA(personaje.position().up(1))})
+		keyboard.s().onPressDo({personaje.moverseA(personaje.position().down(1))})
+		keyboard.a().onPressDo({personaje.moverseA(personaje.position().left(1))
+			//personaje.image("personaje50 girado.png")
+		})
+		keyboard.d().onPressDo({personaje.moverseA(personaje.position().right(1))
+			//personaje.image("personaje50.png")
+		})
+	}
+	
+	method jugador2(personaje){
+		keyboard.up().onPressDo({personaje.moverseA(personaje.position().up(1))})
+		keyboard.down().onPressDo({personaje.moverseA(personaje.position().down(1))})
+		keyboard.left().onPressDo({personaje.moverseA(personaje.position().left(1))
+			//yaguarete.image("imagenYaguarete50 girado.png")
+		})
+		keyboard.right().onPressDo({personaje.moverseA(personaje.position().right(1))})
+			//yaguarete.image("imagenYaguarete50.png")
+	}
+}
+
 object aleatorio {
 	var posicion = game.at(8, 8)
-
-	method posicion() = posicion
 
 	method nuevaPosicion() {
 		// calculo coordenadas aleatorias dentro la pantalla
 		const x = 0.randomUpTo(game.width())
 		const y = 0.randomUpTo(game.height())
 		// cambio a nueva posicion
-		posicion = game.at(x, y)
-		return posicion
+		return game.at(x, y)
 	}
 }
 
