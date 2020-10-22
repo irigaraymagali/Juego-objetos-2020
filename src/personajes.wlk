@@ -5,13 +5,26 @@ import objetos.*
 object carpincho{
 	var position = game.center()
 	
-	var property image = "carpincho right.png"
+	const imagenDerecha = "carpincho right.png"
+	
+	const imagenIzquierda = "carpincho left.png"
+	
+	var property image = imagenDerecha
 	
 	method position() = position
 	
 	method moverseA(nuevaPosicion){
 		position = nuevaPosicion
 	}
+	
+	method mirarIzquierda(){
+		image = imagenIzquierda
+	}
+	
+	method mirarDerecha(){
+		image = imagenDerecha	
+	}
+		
 	method perdiste(){
 	}
 		
@@ -73,10 +86,21 @@ object yaguarete {
 	var position = game.at (0,0)
 	var property image = "yaguarete right.png"
 	
+	const imagenDerecha = "yaguarete right.png"
+	const imagenIzquierda = "yaguarete left.png"
+	
 	method position() = position
 	
 	method moverseA(nuevaPosicion){
 		position = nuevaPosicion
+	}
+	
+	method mirarIzquierda(){
+		image = imagenIzquierda
+	}
+	
+	method mirarDerecha(){
+		image = imagenDerecha	
 	}
 	
 	method perseguirCarpincho(){
