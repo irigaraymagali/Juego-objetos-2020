@@ -109,7 +109,7 @@ object yaguarete {
 }
 
 object manzana {
-	const movimiento = aleatoriomate
+	const movimiento = aleatorio
 	var property position = movimiento.posicion()
 	
 	var property image = "manzana.png"

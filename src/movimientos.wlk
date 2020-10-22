@@ -1,7 +1,7 @@
 import wollok.game.*
 import objetos.*
 
-class Aleatorio {
+object aleatorio {
 	var posicion = game.at(8, 8)
 
 	method posicion() = posicion
@@ -12,9 +12,21 @@ class Aleatorio {
 		const y = 0.randomUpTo(game.height())
 		// cambio a nueva posicion
 		posicion = game.at(x, y)
+		return posicion
 	}
 }
 
-const aleatoriomate = new Aleatorio()
-const aleatoriomatedorado = new Aleatorio()
-const aleatorioAlfajor = new Aleatorio()
+
+object spawner{
+	method spawnMate(){
+		game.addVisual(new Mate(posicion = aleatorio.nuevaPosicion()))
+	}
+	
+	method spawnMateDorado(){
+		game.addVisual(new MateDeOro(posicion = aleatorio.nuevaPosicion()))
+	}
+	
+	method spawnAlfajor(){
+		game.addVisual(new Alfajor(posicion = aleatorio.nuevaPosicion()))
+	}
+}

@@ -3,51 +3,42 @@ import movimientos.*
 import personajes.*
 
 class Mate {
-	const movimiento = aleatoriomate
+	const property posicion
 
 	method image() = "mate50.png"
 	
-	method position() = movimiento.posicion()
+	method position() = posicion
 	
 	method chocasteConCarpincho(){
 		puntos.suma(50)
 		game.removeVisual(self)
 	}
-	method movete(){
-		movimiento.nuevaPosicion()
-	}
 }
 
 class MateDeOro {
-	const movimiento = aleatoriomatedorado
+	const property posicion
 
 	method image() = "mateOro50.png"
 	
-	method position() = movimiento.posicion()
+	method position() = posicion
 	
 	method chocasteConCarpincho(){
 		puntos.suma(150)
 		game.removeVisual(self)
 	}
 	
-	method movete(){
-		movimiento.nuevaPosicion()
-	}
 }
 
 class Alfajor {
-	const movimiento = aleatorioAlfajor
+	const property posicion
 
 	method image() = "alfajor.png"
 	
-	method position() = movimiento.posicion()
+	method position() = posicion
 	
 	method chocasteConCarpincho(){
 		puntos.suma(300)
 		game.removeVisual(self)
-	}
-	method movete(){
-		movimiento.nuevaPosicion()
 	}
 }
 
