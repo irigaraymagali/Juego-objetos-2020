@@ -3,8 +3,10 @@ import pepita.*
 import personajes.*
 import carpinchos.*
 import objetos.*
+import screens.*
 
 program game {
 	game.title("Carpincho gaucho")
-	juegoCarpinchoGaucho.iniciar()
+	start.iniciar()
+	//juegoCarpinchoGaucho.iniciar()
 }

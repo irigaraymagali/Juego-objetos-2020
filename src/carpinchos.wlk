@@ -5,15 +5,15 @@ import objetos.*
 import modos.*
 
 object juegoCarpinchoGaucho  {     
-	var modo = modoCarpincho //MODOS: modoCarpincho, dosJugadores o modoCazar
-method iniciar() {
+	var property modo = modoCarpincho //MODOS: modoCarpincho, dosJugadores o modoCazar
+	
+	method iniciar() {
 		self.configurarJuego()
 		self.agregarPersonajes()
 		modo.configurarTeclas()
 		modo.configurarAcciones()
-		
 		//self.configurarBorde()
-		game.start()
+		//game.start()
 	}
 	
 method configurarJuego(){
