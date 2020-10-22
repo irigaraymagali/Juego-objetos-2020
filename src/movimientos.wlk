@@ -17,3 +17,4 @@ class Aleatorio {
 
 const aleatoriomate = new Aleatorio()
 const aleatoriomatedorado = new Aleatorio()
+const aleatorioAlfajor = new Aleatorio()

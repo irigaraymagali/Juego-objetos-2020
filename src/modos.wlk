@@ -18,7 +18,8 @@ object modoCarpincho{
 method configurarAcciones(){
 	game.onTick(5000, "mover mate aleatoriamente", {const mate = new Mate() game.addVisual(mate) mate.movete()})
 	game.onTick(15000, "mover mate de oro aleatoriamente", {const mateDeOro = new MateDeOro() game.addVisual(mateDeOro) mateDeOro.movete()})
-	game.onTick(500, "mover yaguarete", {yaguarete.perseguirCarpincho()})                                                     
+	game.onTick(400, "mover yaguarete", {yaguarete.perseguirCarpincho()})
+	game.onTick(30000, "mover alfajor aleatoriamente", {const alfajor = new Alfajor() game.addVisual(alfajor) alfajor.movete()})                                                     
 	game.onCollideDo(carpincho,{visualColisionado=>visualColisionado.chocasteConCarpincho()})
 	}
 		
@@ -53,7 +54,8 @@ object dosJugadores{
 
 method configurarAcciones(){
 	game.onTick(5000, "mover mate aleatoriamente", {const mate = new Mate() game.addVisual(mate) mate.movete()})
-	game.onTick(15000, "mover mate de oro aleatoriamente", {const mateDeOro = new MateDeOro() game.addVisual(mateDeOro) mateDeOro.movete()})                                                   
+	game.onTick(15000, "mover mate de oro aleatoriamente", {const mateDeOro = new MateDeOro() game.addVisual(mateDeOro) mateDeOro.movete()})
+	game.onTick(30000, "mover alfajor aleatoriamente", {const alfajor = new Alfajor() game.addVisual(alfajor) alfajor.movete()})                                                       
 	game.onCollideDo(carpincho,{visualColisionado=>visualColisionado.chocasteConCarpincho()})
 	}
 }

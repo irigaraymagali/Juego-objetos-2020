@@ -16,9 +16,6 @@ class Mate {
 	method movete(){
 		movimiento.nuevaPosicion()
 	}
-	method chocasteConYaguarete(){
-	}
-
 }
 
 class MateDeOro {
@@ -33,6 +30,22 @@ class MateDeOro {
 		game.removeVisual(self)
 	}
 	
+	method movete(){
+		movimiento.nuevaPosicion()
+	}
+}
+
+class Alfajor {
+	const movimiento = aleatorioAlfajor
+
+	method image() = "alfajor.png"
+	
+	method position() = movimiento.posicion()
+	
+	method chocasteConCarpincho(){
+		puntos.suma(300)
+		game.removeVisual(self)
+	}
 	method movete(){
 		movimiento.nuevaPosicion()
 	}
