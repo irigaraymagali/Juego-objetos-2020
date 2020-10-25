@@ -26,7 +26,7 @@ object carpincho{
 	}
 		
 	method perdiste(){
-	}
+	return true } 
 		
 	method perseguirManzanaYHuir(){
 		if(self.position().x() == manzana.position().x()){ 
