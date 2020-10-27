@@ -6,7 +6,7 @@ describe"Modo carpincho"{
 	test "Al colisionar con el yaguarete termina el juego"{
 		carpincho.moverseA(game.center())
 		yaguarete.moverseA(game.center())
-		assert.equals(true,carpincho.perdiste())
+		assert.that(carpincho.perdiste())
 	}
 	test "El carpincho al colisionar con el mate se suman 50 puntos"{
 		const mate = new Mate(posicion = game.center())
@@ -19,6 +19,6 @@ describe"Modo cazar"{
 	test "Al colisionar con el carpincho termina el juego"{
 		carpincho.moverseA(game.center()) 
 		yaguarete.moverseA(game.center())
-		assert.equals(true,carpincho.perdiste())
+		assert.that(carpincho.perdiste())
 	}
 }
