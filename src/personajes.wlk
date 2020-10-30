@@ -77,7 +77,7 @@ object carpincho{
 		var puntaje = puntos.puntos()
 		//Termina juego
 		self.perdiste()
-		game.schedule(1000,{game.stop()})
+		game.schedule(3000,{game.stop()})
 		game.say(self, "¡Me atrapaste!")
 		game.say(self, "Puntos obtenidos: ")
 		game.sound("ganaste.mp3").play()
@@ -135,7 +135,7 @@ object yaguarete {
 		carpincho.perdiste()
 		game.schedule(3000,{game.stop()})
 		game.say(self, "¡Perdiste! Tus puntos son: " )
-		game.sound("gameOver.mp3").play()
+		game.sound("perdiste.mp3").play()
 	}
 }
 

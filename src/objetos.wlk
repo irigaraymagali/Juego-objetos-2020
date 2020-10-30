@@ -5,10 +5,9 @@ import personajes.*
 class ObjetoAleatorio {
 	const property posicion
 	
-	method puntosQueDa() = 0
 	method image() = ""
-	method position() = posicion
-	
+	method puntosQueDa() = 0
+
 	method chocasteConCarpincho(){
 		puntos.suma(self.puntosQueDa())
 		game.removeVisual(self)
