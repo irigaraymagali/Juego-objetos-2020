@@ -12,6 +12,8 @@ class Mate {
 	method chocasteConCarpincho(){
 		puntos.suma(50)
 		game.removeVisual(self)
+		game.sound("agarrarObjeto.mp3").play()
+
 	}
 }
 
@@ -25,6 +27,7 @@ class MateDeOro {
 	method chocasteConCarpincho(){
 		puntos.suma(150)
 		game.removeVisual(self)
+		game.sound("agarrarObjeto.mp3").play()
 	}
 	
 }
@@ -39,6 +42,7 @@ class Alfajor {
 	method chocasteConCarpincho(){
 		puntos.suma(300)
 		game.removeVisual(self)
+		game.sound("agarrarObjeto.mp3").play()
 	}
 }
 
@@ -56,6 +60,7 @@ object manzana {
 	}
 	method chocasteConYaguarete(){
 		game.removeVisual(self)
+		game.sound("agarrarObjeto.mp3").play()
 	}
 }
 

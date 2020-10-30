@@ -25,8 +25,7 @@ object carpincho{
 		image = imagenDerecha	
 	}
 		
-	method perdiste(){
-	return true } 
+	method perdiste() = true 
 		
 	method perseguirManzanaYHuir(){
 		if(self.position().x() == manzana.position().x()){ 
@@ -74,12 +73,17 @@ object carpincho{
 	          }	
 	}	
 	
-	method chocasteConYaguarete(){
+	method chocasteConYaguarete() {
+		var puntaje = puntos.puntos()
 		//Termina juego
 		self.perdiste()
 		game.schedule(1000,{game.stop()})
 		game.say(self, "¡Me atrapaste!")
-	}
+		game.say(self, "Puntos obtenidos: ")
+		game.sound("ganaste.mp3").play()
+			
+}
+
 }
 
 object yaguarete {
@@ -129,6 +133,8 @@ object yaguarete {
 		carpincho.perdiste()
 		game.schedule(1000,{game.stop()})
 		game.say(self, "¡Perdiste!")
+		game.say(self, "Puntos obtenidos: ")
+		game.sound("gameOver.mp3").play()
 	}
 }
 
