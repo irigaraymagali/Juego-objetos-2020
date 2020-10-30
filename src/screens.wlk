@@ -26,6 +26,7 @@ object botonModoCarpincho{
 		juegoCarpinchoGaucho.modo(modoCarpincho)
 		game.clear()
 		juegoCarpinchoGaucho.iniciar()
+		game.sound("start.mp3").play()
 	}
 	
 }
@@ -39,6 +40,7 @@ object botonModoPvp{
 		juegoCarpinchoGaucho.modo(dosJugadores)
 		game.clear()
 		juegoCarpinchoGaucho.iniciar()
+		game.sound("start.mp3").play()
 	}
 	
 }
@@ -52,6 +54,7 @@ object botonModoCazar{
 		juegoCarpinchoGaucho.modo(modoCazar)
 		game.clear()
 		juegoCarpinchoGaucho.iniciar()
+		game.sound("start.mp3").play()
 	}
 	
 }
