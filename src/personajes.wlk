@@ -81,8 +81,10 @@ object carpincho{
 		game.say(self, "¡Me atrapaste!")
 		game.say(self, "Puntos obtenidos: ")
 		game.sound("ganaste.mp3").play()
+
 			
 }
+
 
 }
 
@@ -131,20 +133,15 @@ object yaguarete {
 	method chocasteConCarpincho(){
 		//Termina juego
 		carpincho.perdiste()
-		game.schedule(1000,{game.stop()})
-		game.say(self, "¡Perdiste!")
-		game.say(self, "Puntos obtenidos: ")
+		game.schedule(3000,{game.stop()})
+		game.say(self, "¡Perdiste! Tus puntos son: " )
 		game.sound("gameOver.mp3").play()
 	}
 }
 
-
-
-
-
 object puntos {
 	var property puntos = 0
-	// Contador en pantalla ?
+	
 	method suma(puntosObtenidos){
 		puntos = puntos + puntosObtenidos
 	}

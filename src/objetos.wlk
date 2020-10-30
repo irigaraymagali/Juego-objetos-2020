@@ -2,48 +2,43 @@ import wollok.game.*
 import movimientos.*
 import personajes.*
 
-class Mate {
+class ObjetoAleatorio {
 	const property posicion
-
-	method image() = "mate.png"
 	
+	method puntosQueDa() = 0
+	method image() = ""
 	method position() = posicion
 	
 	method chocasteConCarpincho(){
-		puntos.suma(50)
+		puntos.suma(self.puntosQueDa())
 		game.removeVisual(self)
 		game.sound("agarrarObjeto.mp3").play()
 
 	}
 }
 
-class MateDeOro {
-	const property posicion
+class Mate inherits ObjetoAleatorio{
+	
+    override method puntosQueDa()= 50
 
-	method image() = "mate de oro.png"
-	
-	method position() = posicion
-	
-	method chocasteConCarpincho(){
-		puntos.suma(150)
-		game.removeVisual(self)
-		game.sound("agarrarObjeto.mp3").play()
-	}
+	override method image() = "mate.png"
 	
 }
 
-class Alfajor {
-	const property posicion
+class MateDeOro inherits ObjetoAleatorio{
 
-	method image() = "alfajor.png"
+    override method puntosQueDa() = 150
+    
+	override method image() = "mate de oro.png"
 	
-	method position() = posicion
+}
+
+class Alfajor inherits ObjetoAleatorio{
+
+    override method puntosQueDa() = 300
+    
+	override method image() = "alfajor.png"
 	
-	method chocasteConCarpincho(){
-		puntos.suma(300)
-		game.removeVisual(self)
-		game.sound("agarrarObjeto.mp3").play()
-	}
 }
 
 object manzana {
