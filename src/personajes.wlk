@@ -138,7 +138,7 @@ object yaguarete {
 		carpincho.perdiste()
 		game.schedule(3000,{game.stop()})
 		game.say(self, "¡Perdiste! Tus puntos son: " )
-		game.say(puntos,"TUS PUNTOS:   ")
+		game.say(puntos,"TUS PUNTOS:  ")
 		game.sound("perdiste.mp3").play()
 	}
 }

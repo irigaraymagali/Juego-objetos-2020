@@ -58,7 +58,6 @@ object manzana {
 	}
 }
 
-
 class BordeMapa{
 	
 	var property position = game.at(0,0)

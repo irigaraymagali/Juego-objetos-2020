@@ -38,7 +38,6 @@ object aleatorio {
 	}
 }
 
-
 object spawner{
 	method spawnMate(){
 		game.addVisual(new Mate(posicion = aleatorio.nuevaPosicion()))

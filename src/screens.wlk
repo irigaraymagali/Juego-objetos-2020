@@ -67,9 +67,6 @@ object botonModoCazar{
 }
 
 
-
-
-
 object start{
 	
 	method iniciar() {

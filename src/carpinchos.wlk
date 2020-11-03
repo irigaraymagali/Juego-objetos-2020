@@ -34,8 +34,7 @@ method agregarPersonajes(){
 	//const borde2 = new BordeMapa(position = game.at(0,1))
 	
 	game.addVisual(borde1)
-	//game.addVisual(borde2)
-	
+	//game.addVisual(borde2)	
 }
 */
 }
