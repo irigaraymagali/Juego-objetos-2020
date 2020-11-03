@@ -29,7 +29,6 @@ method agregarPersonajes(){
 	  game.addVisual(yaguarete)
     }
   
-
 /*method configurarBorde(){
 	const borde1 = new BordeMapa(position = game.at(0,0))
 	//const borde2 = new BordeMapa(position = game.at(0,1))

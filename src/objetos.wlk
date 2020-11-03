@@ -5,6 +5,7 @@ import personajes.*
 class ObjetoAleatorio {
 	const property posicion
 	
+	method position() = posicion
 	method image() = ""
 	method puntosQueDa() = 0
 
@@ -42,8 +43,7 @@ class Alfajor inherits ObjetoAleatorio{
 
 object manzana {
 	const movimiento = aleatorio
-	var property position = movimiento.posicion()
-	
+	var property position // = movimiento.position()
 	var property image = "manzana.png"
 	
 	method moverseA(nuevaPosicion){
@@ -75,6 +75,15 @@ class BordeMapa{
 	method perdiste(){
 	}
 	
+	method chocasteConCarpincho(){
+	}
+}
+
+
+
+object fondo {
+	method image() = "mate.png"
+	method position() = (0.0)
 	method chocasteConCarpincho(){
 	}
 }

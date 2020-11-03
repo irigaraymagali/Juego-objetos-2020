@@ -7,6 +7,7 @@ import carpinchos.*
 
 object carpinchoSelector{
 	var position = game.at(4, 10)
+	const imagenIzquierda = "carpincho left.png"
 	
 	var property image = "carpincho right.png"
 	
@@ -14,6 +15,12 @@ object carpinchoSelector{
 	
 	method moverseA(nuevaPosicion){
 		position = nuevaPosicion
+	}
+	method mirarDerecha(){
+		image = "carpincho right.png"	
+	}
+	method mirarIzquierda(){
+		image = imagenIzquierda
 	}
 }
 

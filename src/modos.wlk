@@ -42,8 +42,9 @@ object modoCazar{
 	}
 
 method configurarAcciones(){
+	game.onTick(5000, "spawn mate aleatoriamente", {spawner.spawnMate()})
 	game.onTick(5000, "spawn manzana aleatoriamente", {manzana.movete() game.addVisual(manzana)})
-	game.onTick(200, "mover carpincho", {carpincho.perseguirManzanaYHuir()})                                                     
+	game.onTick(200, "mover carpincho", {carpincho.huirDeyaguarete()})                                                     
 	game.onCollideDo(yaguarete,{visualColisionado=>visualColisionado.chocasteConYaguarete()})
 	}
 		

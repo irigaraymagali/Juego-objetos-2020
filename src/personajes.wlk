@@ -24,32 +24,35 @@ object carpincho{
 	method mirarDerecha(){
 		image = imagenDerecha	
 	}
-		
+
+	
 	method perdiste() = true 
 		
-	method perseguirManzanaYHuir(){
-		if(self.position().x() == manzana.position().x()){ 
-			
-		    if(manzana.position().y() > self.position().y()){
-			 self.moverseA(self.position().up(1))} 
-			
-		       else{
-			     self.moverseA(self.position().down(1))}
-		  }else{
-			
-		      if(manzana.position().x() > self.position().x()){
-			   self.moverseA(self.position().right(1))
-			   self.image("carpincho right.png")
-			   } 
-			
-		         else{
-			      self.moverseA(self.position().left(1))
-			      self.image("carpincho left.png")
-			      } 
-	          }	
-	          
-	          self.huirDeyaguarete()
-	}
+//	method perseguirManzanaYHuir(){
+//		const mateNuevo = new Mate(posicion= aleatorio.nuevaPosicion())
+//		
+//		if(self.position().x() == mateNuevo.position().x()){ 
+//			
+//		    if(mateNuevo.position().y() > self.position().y()){
+//			 self.moverseA(self.position().up(1))} 
+//			
+//		       else{
+//			     self.moverseA(self.position().down(1))}
+//		  }else{
+//			
+//		      if(mateNuevo.position().x() > self.position().x()){
+//			   self.moverseA(self.position().right(1))
+//			   self.image("carpincho right.png")
+//			   } 
+//			
+//		         else{
+//			      self.moverseA(self.position().left(1))
+//			      self.image("carpincho left.png")
+//			      } 
+//	          }	
+//	          
+//	          self.huirDeyaguarete()
+//	}
 
 		method huirDeyaguarete(){
 		if(self.position().x() == yaguarete.position().x()){ 
@@ -135,6 +138,7 @@ object yaguarete {
 		carpincho.perdiste()
 		game.schedule(3000,{game.stop()})
 		game.say(self, "¡Perdiste! Tus puntos son: " )
+		game.say(puntos,"TUS PUNTOS:   ")
 		game.sound("perdiste.mp3").play()
 	}
 }
