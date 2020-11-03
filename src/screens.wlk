@@ -34,8 +34,7 @@ object botonModoCarpincho{
 		game.clear()
 		juegoCarpinchoGaucho.iniciar()
 		game.sound("start.mp3").play()
-	}
-	
+	}	
 }
 
 object botonModoPvp{

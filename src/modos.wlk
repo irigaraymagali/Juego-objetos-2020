@@ -14,8 +14,7 @@ method configurarAcciones(){
 	game.onTick(400, "mover yaguarete", {yaguarete.perseguirCarpincho()})
 	game.onTick(30000, "spawn alfajor aleatoriamente", {spawner.spawnAlfajor()})                                                     
 	game.onCollideDo(carpincho,{visualColisionado=>visualColisionado.chocasteConCarpincho()})
-	}
-		
+	}		
 }
 
 
