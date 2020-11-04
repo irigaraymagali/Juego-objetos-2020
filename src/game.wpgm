@@ -5,10 +5,10 @@ import carpinchos.*
 import objetos.*
 import screens.*
 
-program gamed {
+program game {
 	game.title("Carpincho gaucho")
 	start.iniciar()
-	//juegoCarpinchoGaucho.iniciar()
+	//juegoCarpinchoGaucho.iniciar() 
 }
 
  
