@@ -79,12 +79,3 @@ class Muro{
 	method chocasteConCarpincho(){
 	}
 }
-
-
-
-object fondo {
-	method image() = "mate.png"
-	method position() = (0.0)
-	method chocasteConCarpincho(){
-	}
-}

@@ -9,7 +9,7 @@ object juegoCarpinchoGaucho  {
 	var property modo = modoCarpincho //MODOS: modoCarpincho, dosJugadores o modoCazar
 	
 	method iniciar() {
-		self.configurarJuego()
+		self.agregarFondo()
 		self.agregarPersonajes()
 		start.generarMuros()
 		modo.configurarTeclas()
@@ -17,20 +17,14 @@ object juegoCarpinchoGaucho  {
 		
 		//game.start()
 	}
-	
-method configurarJuego(){
-	game.title("CarpinchoGaucho")
-	game.width(20)
-	game.height(20)
-	game.cellSize(50)
-	game.boardGround("campo.jpeg")
-    }
  
-method agregarPersonajes(){
+ method agregarFondo(){
+ 	  game.addVisual(fondo)
+ }
+ 
+ method agregarPersonajes(){
 	  game.addVisual(carpincho)
 	  game.addVisual(yaguarete)
     }
-
-
 
 }
