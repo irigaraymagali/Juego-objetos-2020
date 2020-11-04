@@ -42,6 +42,8 @@ object carpincho{
 	}
 	
 	method perdiste() = true
+	
+	
 		
 //	method perseguirManzanaYHuir(){
 //		const mateNuevo = new Mate(posicion= aleatorio.nuevaPosicion())
@@ -69,7 +71,7 @@ object carpincho{
 //	          self.huirDeyaguarete()
 //	}
 
-		method huirDeyaguarete(){
+	method huirDeyaguarete(){
 		if(self.position().x() == yaguarete.position().x()){ 
 			
 		    if(yaguarete.position().y() > self.position().y()){
@@ -91,8 +93,8 @@ object carpincho{
 	          }	
 	}	
 	
-method chocasteConYaguarete(){
-	juegoCarpinchoGaucho.perderJuego()
+	method chocasteConYaguarete(){
+		juegoCarpinchoGaucho.perderJuego()
 	}
 }
 
