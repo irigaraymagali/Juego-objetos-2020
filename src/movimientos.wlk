@@ -21,9 +21,11 @@ object keyConfig{
 		keyboard.left().onPressDo({personaje.moverseA(personaje.position().left(1), izquierda)
 			personaje.mirarIzquierda()
 		})
-		keyboard.right().onPressDo({personaje.moverseA(personaje.position().right(1), derecha)})
+		keyboard.right().onPressDo({personaje.moverseA(personaje.position().right(1), derecha)
 			personaje.mirarDerecha()
-	}
+	})
+}
+
 }
 
 object aleatorio {
@@ -49,6 +51,12 @@ object spawner{
 	
 	method spawnAlfajor(){
 		game.addVisual(new Alfajor(posicion = aleatorio.nuevaPosicion()))
+	}
+	
+	method spawnPorTiempo(){
+		game.onTick(5000, "spawn mate aleatoriamente", {self.spawnMate()})
+		game.onTick(15000, "spawn mate de oro aleatoriamente", {self.spawnMateDorado()})
+		game.onTick(30000, "spawn alfajor aleatoriamente", {self.spawnAlfajor()})
 	}
 }
 
