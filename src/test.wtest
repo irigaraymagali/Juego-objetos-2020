@@ -1,24 +1,25 @@
 import personajes.*
 import objetos.*
 import wollok.game.*
+import movimientos.*
 
 describe"Modo carpincho"{
 	test "Al colisionar con el yaguarete termina el juego"{
-		carpincho.moverseA(game.center())
-		yaguarete.moverseA(game.center())
+		carpincho.moverseA(game.center(),derecha)
+		yaguarete.moverseA(game.center(),derecha)
 		assert.that(carpincho.perdiste())
 	}
 	test "El carpincho al colisionar con el mate se suman 50 puntos"{
 		const mate = new Mate(posicion = game.center())
-		carpincho.moverseA(mate.posicion())
-		assert.equals(50,puntos.puntos())
+		carpincho.moverseA(mate.posicion(),derecha)
+		assert.equals(50,puntos.puntaje())
 	}
 }
 
 describe"Modo cazar"{
 	test "Al colisionar con el carpincho termina el juego"{
-		carpincho.moverseA(game.center()) 
-		yaguarete.moverseA(game.center())
+		carpincho.moverseA(game.center(),derecha) 
+		yaguarete.moverseA(game.center(),derecha)
 		assert.that(carpincho.perdiste())
 	}
 }

@@ -20,6 +20,7 @@ method configurarAcciones(){
 method perder(){
 	puntos.mostrarPuntaje()
 	game.schedule(3000,{game.stop()})
+	return carpincho.perdiste()
  }
 
 }

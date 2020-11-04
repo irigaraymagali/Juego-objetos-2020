@@ -46,6 +46,8 @@ object carpincho{
 	method mirarDerecha(){
 		image = imagenDerecha	
 	}
+	
+	method perdiste() = true
 		
 //	method perseguirManzanaYHuir(){
 //		const mateNuevo = new Mate(posicion= aleatorio.nuevaPosicion())
@@ -103,11 +105,14 @@ object carpincho{
 		game.say(self, "¡Me atrapaste!")
 		game.say(self, "Puntos obtenidos: ")
 		game.sound("ganaste.mp3").play()
-
 			
 }
 */
-
+method chocasteConYaguarete(){
+		//Termina juego
+		juegoCarpinchoGaucho.modo().perder()
+			
+	}
 }
 
 object yaguarete {
@@ -176,14 +181,14 @@ object yaguarete {
 }
 
 object puntos {
-	var puntaje = 0
+	var property puntaje = 0
 	
 	const property position = game.center()
 	
 	const property image = "puntos.png"
 	
 	method mostrarPuntaje(){
-		game.addVisual(puntos)
+		//game.addVisual(self)
 		game.say(self, "¡Perdiste! Tus puntos son: " + puntaje)
 		game.sound("perdiste.mp3").play()
 	}
