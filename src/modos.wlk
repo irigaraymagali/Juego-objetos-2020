@@ -45,6 +45,7 @@ method perder(){
  
 }
 
+
 object modoCazar{
 	method configurarTeclas(){
 		keyConfig.jugador1(yaguarete)
