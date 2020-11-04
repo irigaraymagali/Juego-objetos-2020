@@ -3,6 +3,7 @@ import movimientos.*
 import personajes.*
 import objetos.*
 import modos.*
+import screens.*
 
 object juegoCarpinchoGaucho  {     
 	var property modo = modoCarpincho //MODOS: modoCarpincho, dosJugadores o modoCazar
@@ -10,9 +11,10 @@ object juegoCarpinchoGaucho  {
 	method iniciar() {
 		self.configurarJuego()
 		self.agregarPersonajes()
+		start.generarMuros()
 		modo.configurarTeclas()
 		modo.configurarAcciones()
-		//self.configurarBorde()
+		
 		//game.start()
 	}
 	
@@ -28,13 +30,7 @@ method agregarPersonajes(){
 	  game.addVisual(carpincho)
 	  game.addVisual(yaguarete)
     }
-  
-/*method configurarBorde(){
-	const borde1 = new BordeMapa(position = game.at(0,0))
-	//const borde2 = new BordeMapa(position = game.at(0,1))
-	
-	game.addVisual(borde1)
-	//game.addVisual(borde2)	
-}
-*/
+
+
+
 }

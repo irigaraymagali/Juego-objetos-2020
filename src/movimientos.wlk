@@ -5,23 +5,23 @@ import personajes.*
 
 object keyConfig{
 	method jugador1(personaje){
-		keyboard.w().onPressDo({personaje.moverseA(personaje.position().up(1))})
-		keyboard.s().onPressDo({personaje.moverseA(personaje.position().down(1))})
-		keyboard.a().onPressDo({personaje.moverseA(personaje.position().left(1))
+		keyboard.w().onPressDo({personaje.moverseA(personaje.position().up(1), arriba)})
+		keyboard.s().onPressDo({personaje.moverseA(personaje.position().down(1), abajo)})
+		keyboard.a().onPressDo({personaje.moverseA(personaje.position().left(1), izquierda)
 			personaje.mirarIzquierda()
 		})
-		keyboard.d().onPressDo({personaje.moverseA(personaje.position().right(1))
+		keyboard.d().onPressDo({personaje.moverseA(personaje.position().right(1), derecha)
 			personaje.mirarDerecha()
 		})
 	}
 	
 	method jugador2(personaje){
-		keyboard.up().onPressDo({personaje.moverseA(personaje.position().up(1))})
-		keyboard.down().onPressDo({personaje.moverseA(personaje.position().down(1))})
-		keyboard.left().onPressDo({personaje.moverseA(personaje.position().left(1))
+		keyboard.up().onPressDo({personaje.moverseA(personaje.position().up(1), arriba)})
+		keyboard.down().onPressDo({personaje.moverseA(personaje.position().down(1), abajo)})
+		keyboard.left().onPressDo({personaje.moverseA(personaje.position().left(1), izquierda)
 			personaje.mirarIzquierda()
 		})
-		keyboard.right().onPressDo({personaje.moverseA(personaje.position().right(1))})
+		keyboard.right().onPressDo({personaje.moverseA(personaje.position().right(1), derecha)})
 			personaje.mirarDerecha()
 	}
 }
@@ -50,4 +50,20 @@ object spawner{
 	method spawnAlfajor(){
 		game.addVisual(new Alfajor(posicion = aleatorio.nuevaPosicion()))
 	}
+}
+
+object arriba {
+  method posicionEnEsaDireccion(jugador) = jugador.position().up(1)
+}
+
+object abajo {
+  method posicionEnEsaDireccion(jugador) = jugador.position().down(1)
+}
+
+object izquierda {
+  method posicionEnEsaDireccion(jugador) = jugador.position().left(1)
+}
+
+object derecha {
+  method posicionEnEsaDireccion(jugador) = jugador.position().right(1)
 }

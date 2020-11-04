@@ -5,6 +5,8 @@ import personajes.*
 class ObjetoAleatorio {
 	const property posicion
 	
+	const property esAtravesable = true
+	
 	method position() = posicion
 	method image() = ""
 	method puntosQueDa() = 0
@@ -58,11 +60,13 @@ object manzana {
 	}
 }
 
-class BordeMapa{
+class Muro{
 	
 	var property position = game.at(0,0)
 	
-	var property image = "bordex.png"
+	var property image = "muro.png"
+	
+	var property esAtravesable = false
 	
 	method image() = image
 	
@@ -70,8 +74,6 @@ class BordeMapa{
 	
 	method moverseA(nuevaPosicion){
 		position = nuevaPosicion
-	}
-	method perdiste(){
 	}
 	
 	method chocasteConCarpincho(){
