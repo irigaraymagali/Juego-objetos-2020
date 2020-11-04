@@ -14,6 +14,7 @@ object fondo{
 	var property position = game.at(1, 1)
 	const property esAtravesable = true
 	method chocasteConCarpincho(){}
+	method chocasteConYaguarete(){}
 }
 
 class Boton{
