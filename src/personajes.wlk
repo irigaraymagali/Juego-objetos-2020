@@ -42,6 +42,8 @@ object carpincho{
 	}
 	
 	method perdiste() = true
+	
+	
 		
 //	method perseguirManzanaYHuir(){
 //		const mateNuevo = new Mate(posicion= aleatorio.nuevaPosicion())
