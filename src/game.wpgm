@@ -11,7 +11,4 @@ program game {
 	//juegoCarpinchoGaucho.iniciar()
 }
 
-/* TODO 
- * cambio de fondo: No, el ground o boardground no se actualiza una vez iniciado el juego. Para eso el hackazo es poner un objeto "fondo" en la posición o (-1@-1) con una imagen grande que ocupe todo el fondo. Aseguren de que sea el primer objeto que pongan en la pantalla, así los otros aparecen arriba y no son tapados.
- * */
  
