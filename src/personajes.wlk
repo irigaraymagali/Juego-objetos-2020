@@ -1,5 +1,6 @@
 import wollok.game.*
 import movimientos.*
+import carpinchos.*
 import objetos.*
 
 object carpincho{
@@ -45,9 +46,6 @@ object carpincho{
 	method mirarDerecha(){
 		image = imagenDerecha	
 	}
-
-
-	method perdiste() = true 
 		
 //	method perseguirManzanaYHuir(){
 //		const mateNuevo = new Mate(posicion= aleatorio.nuevaPosicion())
@@ -97,7 +95,7 @@ object carpincho{
 	          }	
 	}	
 	
-	method chocasteConYaguarete() {
+/*method chocasteConYaguarete() {
 		var puntaje = puntos.puntos()
 		//Termina juego
 		self.perdiste()
@@ -108,7 +106,7 @@ object carpincho{
 
 			
 }
-
+*/
 
 }
 
@@ -172,19 +170,26 @@ object yaguarete {
 	
 	method chocasteConCarpincho(){
 		//Termina juego
-		carpincho.perdiste()
-		game.schedule(3000,{game.stop()})
-		game.say(self, "¡Perdiste! Tus puntos son: " )
-		game.say(puntos,"TUS PUNTOS:  ")
-		game.sound("perdiste.mp3").play()
+		juegoCarpinchoGaucho.modo().perder()
+			
 	}
 }
 
 object puntos {
-	var property puntos = 0
+	var puntaje = 0
+	
+	const property position = game.center()
+	
+	const property image = "puntos.png"
+	
+	method mostrarPuntaje(){
+		game.addVisual(puntos)
+		game.say(self, "¡Perdiste! Tus puntos son: " + puntaje)
+		game.sound("perdiste.mp3").play()
+	}
 	
 	method suma(puntosObtenidos){
-		puntos = puntos + puntosObtenidos
+		puntaje = puntaje + puntosObtenidos
 	}
 }
 

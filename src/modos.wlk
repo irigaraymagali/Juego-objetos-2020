@@ -15,8 +15,14 @@ method configurarAcciones(){
 	game.onTick(30000, "spawn alfajor aleatoriamente", {spawner.spawnAlfajor()})                                                     
 	game.onCollideDo(carpincho,{visualColisionado=>visualColisionado.chocasteConCarpincho()})
 	}		
-}
 
+
+method perder(){
+	puntos.mostrarPuntaje()
+	game.schedule(3000,{game.stop()})
+ }
+
+}
 
 object dosJugadores{
 	
@@ -33,6 +39,12 @@ method configurarAcciones(){
 	game.onTick(30000, "spawn alfajor aleatoriamente", {spawner.spawnAlfajor()})                                                       
 	game.onCollideDo(carpincho,{visualColisionado=>visualColisionado.chocasteConCarpincho()})
 	}
+	
+method perder(){
+	puntos.mostrarPuntaje()
+	game.schedule(3000,{game.stop()})
+ }
+ 
 }
 
 object modoCazar{
@@ -46,4 +58,11 @@ method configurarAcciones(){
 	game.onTick(200, "mover carpincho", {carpincho.huirDeyaguarete()})                                                     
 	game.onCollideDo(yaguarete,{visualColisionado=>visualColisionado.chocasteConYaguarete()})
 	}		
+
+method perder(){
+	game.removeVisual(carpincho)
+	game.removeVisual(yaguarete)
+	game.say(puntos, "¡ganaste!")
+	game.schedule(3000,{game.stop()})
+ }
 }

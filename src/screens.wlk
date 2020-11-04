@@ -5,6 +5,10 @@ import objetos.*
 import modos.*
 import carpinchos.*
 
+object pantallaFinal{
+	
+}
+
 object fondo{
 	var property image = "fondocampo.png"
 	var property position = game.at(1, 1)
