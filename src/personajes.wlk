@@ -188,7 +188,7 @@ object puntos {
 	const property image = "puntos.png"
 	
 	method mostrarPuntaje(){
-		//game.addVisual(self)
+		game.addVisual(self)
 		game.say(self, "¡Perdiste! Tus puntos son: " + puntaje)
 		game.sound("perdiste.mp3").play()
 	}

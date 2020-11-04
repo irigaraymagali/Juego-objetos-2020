@@ -42,6 +42,8 @@ method configurarAcciones(){
 	}
 	
 method perder(){
+	game.removeVisual(carpincho)
+	game.removeVisual(yaguarete)
 	puntos.mostrarPuntaje()
 	game.schedule(3000,{game.stop()})
  }
