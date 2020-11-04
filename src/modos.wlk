@@ -22,7 +22,6 @@ method perder(){
 }
 
 object dosJugadores{
-	
 	method configurarTeclas(){
 		keyConfig.jugador1(carpincho)
 		keyConfig.jugador2(yaguarete)
@@ -52,7 +51,6 @@ method configurarAcciones(){
 	}		
 
 method perder(){
-	game.addVisual(puntos)
 	game.say(puntos, "¡ganaste!")
  }
 }

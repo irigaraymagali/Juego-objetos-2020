@@ -162,12 +162,11 @@ object yaguarete {
 object puntos {
 	var property puntaje = 0
 	
-	const property position = game.center()
+	const property position = game.at(14, 10)
 	
-	const property image = "carpincho right.png"	
+	const property image = "puntos.png"	
 	
 	method mostrarPuntaje(){
-		game.addVisual(self)
 		game.say(self, "¡Perdiste! Tus puntos son: " + puntaje)
 		game.sound("perdiste.mp3").play()
 	}

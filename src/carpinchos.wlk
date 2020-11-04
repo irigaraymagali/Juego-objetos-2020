@@ -29,6 +29,9 @@ object juegoCarpinchoGaucho  {
 
 method perderJuego(){
 	game.clear()
+	pantallaFinal.iniciar()
+	game.addVisual(fondo)
+	game.addVisual(puntos)
 	self.modo().perder()
 	game.schedule(3000,{game.stop()})
 }

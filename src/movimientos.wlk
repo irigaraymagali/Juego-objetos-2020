@@ -55,7 +55,7 @@ object spawner{
 	
 	method spawnPorTiempo(){
 		game.onTick(5000, "spawn mate aleatoriamente", {self.spawnMate()})
-		game.onTick(15000, "spawn mate de oro aleatoriamente", {self.spawnMateDorado()})
+		game.onTick(13000, "spawn mate de oro aleatoriamente", {self.spawnMateDorado()})
 		game.onTick(30000, "spawn alfajor aleatoriamente", {self.spawnAlfajor()})
 	}
 }
