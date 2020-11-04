@@ -91,11 +91,9 @@ object carpincho{
 	          }	
 	}	
 	
-//method chocasteConYaguarete(){
-		//Termina juego
-//		juegoCarpinchoGaucho.modo().perder()
-			
-//	}
+method chocasteConYaguarete(){
+	juegoCarpinchoGaucho.perderJuego()
+	}
 }
 
 object yaguarete {
@@ -157,10 +155,7 @@ object yaguarete {
 	}
 	
 	method chocasteConCarpincho(){
-		game.clear()
-		juegoCarpinchoGaucho.modo().perder()
-		game.schedule(3000,{game.stop()})
-			
+		juegoCarpinchoGaucho.perderJuego()	
 	}
 }
 
@@ -169,7 +164,7 @@ object puntos {
 	
 	const property position = game.center()
 	
-	const property image = "carpincho right.png"
+	const property image = "carpincho right.png"	
 	
 	method mostrarPuntaje(){
 		game.addVisual(self)

@@ -34,7 +34,7 @@ method configurarAcciones(){
 	game.onTick(5000, "spawn mate aleatoriamente", {spawner.spawnMate()})
 	game.onTick(15000, "spawn mate de oro aleatoriamente", {spawner.spawnMateDorado()})
 	game.onTick(30000, "spawn alfajor aleatoriamente", {spawner.spawnAlfajor()})                                                       
-	game.onCollideDo(carpincho,{visualColisionado=>visualColisionado.chocasteConCarpincho()})
+	game.onCollideDo(yaguarete,{visualColisionado=>visualColisionado.chocasteConYaguarete()})
 	}
 	
 method perder(){
@@ -56,6 +56,7 @@ method configurarAcciones(){
 	}		
 
 method perder(){
+	game.addVisual(puntos)
 	game.say(puntos, "¡ganaste!")
  }
 }

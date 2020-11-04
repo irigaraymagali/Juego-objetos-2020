@@ -27,4 +27,10 @@ object juegoCarpinchoGaucho  {
 	  game.addVisual(yaguarete)
     }
 
+method perderJuego(){
+	game.clear()
+	self.modo().perder()
+	game.schedule(3000,{game.stop()})
+}
+
 }
