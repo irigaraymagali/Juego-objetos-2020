@@ -5,10 +5,6 @@ import objetos.*
 import modos.*
 import carpinchos.*
 
-object pantallaFinal{
-	
-}
-
 object fondo{
 	var property image = "fondocampo.png"
 	var property position = game.at(1, 1)
@@ -103,7 +99,7 @@ object start{
 }
 
 object carpinchoSelector{
-	var position = game.at(4, 10)
+	var property position = game.at(4, 10)
 	const imagenIzquierda = "carpincho left.png"
 	
 	var property image = "carpincho right.png"

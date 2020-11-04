@@ -11,8 +11,8 @@ object modoCarpincho{
 method configurarAcciones(){
 	game.onTick(5000, "spawn mate aleatoriamente", {spawner.spawnMate()})
 	game.onTick(15000, "spawn mate de oro aleatoriamente", {spawner.spawnMateDorado()})
-	game.onTick(400, "mover yaguarete", {yaguarete.perseguirCarpincho()})
-	game.onTick(30000, "spawn alfajor aleatoriamente", {spawner.spawnAlfajor()})                                                     
+	game.onTick(30000, "spawn alfajor aleatoriamente", {spawner.spawnAlfajor()})
+	game.onTick(400, "mover yaguarete", {yaguarete.perseguirCarpincho()})                                                     
 	game.onCollideDo(carpincho,{visualColisionado=>visualColisionado.chocasteConCarpincho()})
 	}		
 
@@ -26,9 +26,7 @@ method perder(){
 object dosJugadores{
 	
 	method configurarTeclas(){
-		//movimientos carpincho
 		keyConfig.jugador1(carpincho)
-		//movimientos yaguarete
 		keyConfig.jugador2(yaguarete)
 	}
 
