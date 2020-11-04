@@ -17,6 +17,10 @@ class ObjetoAleatorio {
 		game.sound("agarrarObjeto.mp3").play()
 
 	}
+	method chocasteConYaguarete(){
+		game.removeVisual(self)
+		game.sound("agarrarObjeto.mp3").play()
+	}
 }
 
 class Mate inherits ObjetoAleatorio{
