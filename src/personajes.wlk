@@ -33,12 +33,6 @@ object carpincho{
         
         }
   }
-  
-/*  method actualizarImagen() {
-    image = orientacion.imagenDelJugador(self)
-		game.addVisual(self)
-  }
-*/	
 	method mirarIzquierda(){
 		image = imagenIzquierda
 	}
@@ -97,22 +91,11 @@ object carpincho{
 	          }	
 	}	
 	
-/*method chocasteConYaguarete() {
-		var puntaje = puntos.puntos()
+//method chocasteConYaguarete(){
 		//Termina juego
-		self.perdiste()
-		game.schedule(3000,{game.stop()})
-		game.say(self, "¡Me atrapaste!")
-		game.say(self, "Puntos obtenidos: ")
-		game.sound("ganaste.mp3").play()
+//		juegoCarpinchoGaucho.modo().perder()
 			
-}
-*/
-method chocasteConYaguarete(){
-		//Termina juego
-		juegoCarpinchoGaucho.modo().perder()
-			
-	}
+//	}
 }
 
 object yaguarete {
@@ -186,7 +169,7 @@ object puntos {
 	
 	const property position = game.center()
 	
-	const property image = "puntos.png"
+	const property image = "carpincho right.png"
 	
 	method mostrarPuntaje(){
 		game.addVisual(self)
