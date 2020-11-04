@@ -174,8 +174,9 @@ object yaguarete {
 	}
 	
 	method chocasteConCarpincho(){
-		//Termina juego
+		game.clear()
 		juegoCarpinchoGaucho.modo().perder()
+		game.schedule(3000,{game.stop()})
 			
 	}
 }

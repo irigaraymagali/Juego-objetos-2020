@@ -18,11 +18,7 @@ method configurarAcciones(){
 
 
 method perder(){
-	game.removeVisual(carpincho)
-	game.removeVisual(yaguarete)
 	puntos.mostrarPuntaje()
-	game.schedule(3000,{game.stop()})
-	return carpincho.perdiste()
  }
 
 }
@@ -44,10 +40,7 @@ method configurarAcciones(){
 	}
 	
 method perder(){
-	game.removeVisual(carpincho)
-	game.removeVisual(yaguarete)
 	puntos.mostrarPuntaje()
-	game.schedule(3000,{game.stop()})
  }
  
 }
@@ -65,9 +58,6 @@ method configurarAcciones(){
 	}		
 
 method perder(){
-	game.removeVisual(carpincho)
-	game.removeVisual(yaguarete)
 	game.say(puntos, "¡ganaste!")
-	game.schedule(3000,{game.stop()})
  }
 }
