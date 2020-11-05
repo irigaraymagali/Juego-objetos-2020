@@ -13,9 +13,11 @@ class Hielo inherits ObjetoAleatorio{
 	}
 	
 	method congelar(personaje){
+	game.sound("viento.mp3").play()
 	game.removeVisual(self)
 	personaje.estaCongelado(true)
 	game.schedule(3000, {personaje.estaCongelado(false)})
+	
 	}
 }
 
@@ -33,6 +35,7 @@ class Manzana inherits ObjetoAleatorio{
 	}
 	
 	method duplicarPuntos(){
+	game.sound("comerManzana.mp3").play()
 	game.removeVisual(self)
 	spawner.multiplicador(2)
 	game.schedule(5000, {spawner.multiplicador(1)})
