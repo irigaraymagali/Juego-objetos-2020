@@ -6,7 +6,7 @@ import modos.*
 import carpinchos.*
 
 object fondo{
-	var property image = "fondocampo.png"
+	var property image = "fondocarpinchos2.png"
 	var property position = game.at(0, 0)
 	const property esAtravesable = true
 	method chocasteConCarpincho(){}
@@ -48,14 +48,32 @@ const botonModoCazar = new Boton(
 	modo = modoCazar
 )
 
+class SwitchArbustos{
+	const arbActivados
+	var property image
+	var property position
+	
+	const property esAtravesable = true
+	
+	method chocasteConCarpincho(){
+		juegoCarpinchoGaucho.arbustosActivados(arbActivados)
+	}
+	
+}
+
+const switchArbustosSi = new SwitchArbustos(arbActivados = true, image = "switchArbustosSi.png", position = game.at(7, 1))
+const switchArbustosNo = new SwitchArbustos(arbActivados = false, image = "switchArbustosNo.png", position = game.at(9,1))
+
 object start{
 	
 	method iniciar() {
+		game.addVisual(fondo)
 		self.configurarJuego()
 		self.agregarPersonajes()
 		self.configurarTeclas()
 		self.configurarAcciones()
 		self.generarMuros()
+		self.agregarSwitchArbustos()
 		game.start()
 		
 	}
@@ -65,7 +83,7 @@ object start{
 	game.width(20)
 	game.height(20)
 	game.cellSize(50)
-	game.boardGround("fondocarpinchos2.png")
+	game.boardGround("fondocampo.png")
     }
 	
 	method configurarTeclas(){
@@ -81,6 +99,11 @@ object start{
     
     method configurarAcciones(){
     	game.onCollideDo(carpincho,{visualColisionado=>visualColisionado.chocasteConCarpincho()})
+    }
+    
+    method agregarSwitchArbustos(){
+    	game.addVisual(switchArbustosSi)
+    	game.addVisual(switchArbustosNo)
     }
     
   	method generarMuros() {
@@ -99,7 +122,7 @@ object start{
 	method generarArbustos(){
 		const posicionesParaGenerarArbustos = []
 		
-		(0 .. 8).forEach{ num => posicionesParaGenerarArbustos.add(new Muro(position = aleatorio.nuevaPosicion()))}
+		(0 .. 12).forEach{ num => posicionesParaGenerarArbustos.add(new Arbusto(position = aleatorio.nuevaPosicion()))}
 		
 		posicionesParaGenerarArbustos.forEach {posicion => game.addVisual(posicion)}
 	}

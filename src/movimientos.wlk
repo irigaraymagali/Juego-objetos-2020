@@ -33,20 +33,38 @@ object aleatorio {
 }
 
 object spawner{
+		
+	method estaOcupado(posicionObjeto){
+		return posicionObjeto.allElements().size()>0
+	}
+		
 	method spawnMate(){
-		game.addVisual(new Mate(posicion = aleatorio.nuevaPosicion()))
+		var posicionObjeto = aleatorio.nuevaPosicion()
+		if(self.estaOcupado(posicionObjeto)){self.spawnMate()}
+		else{
+		game.addVisual(new Mate(posicion = posicionObjeto))
+		}
 	}
 	
 	method spawnMateDorado(){
-		game.addVisual(new MateDeOro(posicion = aleatorio.nuevaPosicion()))
+		var posicionObjeto = aleatorio.nuevaPosicion()
+		if(self.estaOcupado(posicionObjeto)){self.spawnMate()}
+		else{
+			game.addVisual(new MateDeOro(posicion = posicionObjeto))
+		}
 	}
 	
 	method spawnAlfajor(){
-		game.addVisual(new Alfajor(posicion = aleatorio.nuevaPosicion()))
+		var posicionObjeto = aleatorio.nuevaPosicion()
+		if(self.estaOcupado(posicionObjeto)){self.spawnMate()}
+		else{
+		game.addVisual(new Alfajor(posicion = posicionObjeto))
+		}
+		
 	}
 	
 	method spawnPorTiempo(){
-		game.onTick(5000, "spawn mate aleatoriamente", {self.spawnMate()})
+		game.onTick(3000, "spawn mate aleatoriamente", {self.spawnMate()})
 		game.onTick(15000, "spawn mate de oro aleatoriamente", {self.spawnMateDorado()})
 		game.onTick(30000, "spawn alfajor aleatoriamente", {self.spawnAlfajor()})
 	}

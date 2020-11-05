@@ -7,19 +7,17 @@ import screens.*
 
 object juegoCarpinchoGaucho  {     
 	var property modo = modoCarpincho //MODOS: modoCarpincho, dosJugadores o modoCazar
-	
+	var property arbustosActivados = true
 	method iniciar() {
-		self.agregarFondo()
 		self.agregarPersonajes()
 		start.generarMuros()
-		start.generarArbustos()
 		modo.configurarTeclas()
 		modo.configurarAcciones()
+	if(arbustosActivados){
+		start.generarArbustos()
 	}
- 
- method agregarFondo(){
- 	  game.addVisual(fondo)
- }
+	}
+
  
  method agregarPersonajes(){
  	  carpincho.position(game.center())

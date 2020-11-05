@@ -29,7 +29,7 @@ object carpincho{
     if(self.puedeMoverAl(unaOrientacion)){ 
       position = posicion
     } else {
-        
+     
            }
   }
   
