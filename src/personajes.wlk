@@ -16,6 +16,9 @@ object carpincho{
 	
 	var property image = imagenDerecha
 	
+	var distanciaX = self.position().x() - yaguarete.position().x()
+	var distanciaY = self.position().y() - yaguarete.position().y()
+	
 	method position() = position
 	
 	method puedeMoverAl(unaOrientacion) {
@@ -37,8 +40,13 @@ object carpincho{
     image = orientacion.imagenDelJugador(self)
   }	
 	method perdiste() = true
-	
-	
+		
+	method alejarseDeYaguarete(){
+		if(distanciaX < 10 || distanciaY < 10){
+			self.huirDeyaguarete()
+		}
+		//game.say(self,"Atrapame")
+	}
 		
 //	method perseguirManzanaYHuir(){
 //		const mateNuevo = new Mate(posicion= aleatorio.nuevaPosicion())

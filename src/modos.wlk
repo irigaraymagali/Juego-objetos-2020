@@ -52,7 +52,7 @@ object modoCazar{
 method configurarAcciones(){
 	juegoCarpinchoGaucho.arbustosActivados(true)
 	spawner.spawnPorTiempo()
-	game.onTick(200, "mover carpincho", {carpincho.huirDeyaguarete()})                                                     
+	game.onTick(200, "mover carpincho", {carpincho.alejarseDeYaguarete()})                                                     
 	game.onCollideDo(yaguarete,{visualColisionado=>visualColisionado.chocasteConYaguarete()})
 	}		
 
