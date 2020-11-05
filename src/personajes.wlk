@@ -30,7 +30,7 @@ object carpincho{
       position = posicion
     } else {
         
-        }
+           }
   }
   
    method actualizarImagen() {

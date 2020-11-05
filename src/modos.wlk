@@ -56,6 +56,6 @@ method configurarAcciones(){
 
 method perder(){
 	game.addVisual(puntos)
-	game.say(puntos, "¡ganaste!")
+	game.say(puntos, "¡Ganaste!")
  }
 }

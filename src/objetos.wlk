@@ -50,7 +50,7 @@ class Alfajor inherits ObjetoAleatorio{
 
 object manzana {
 	const movimiento = aleatorio
-	var property position // = movimiento.position()
+	var property position
 	var property image = "manzana.png"
 	
 	method moverseA(nuevaPosicion){
