@@ -14,8 +14,7 @@ object juegoCarpinchoGaucho  {
 		start.generarMuros()
 		modo.configurarTeclas()
 		modo.configurarAcciones()
-		
-		//game.start()
+
 	}
  
  method agregarFondo(){
