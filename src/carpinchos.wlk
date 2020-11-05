@@ -12,6 +12,7 @@ object juegoCarpinchoGaucho  {
 		self.agregarFondo()
 		self.agregarPersonajes()
 		start.generarMuros()
+		start.generarArbustos()
 		modo.configurarTeclas()
 		modo.configurarAcciones()
 	}

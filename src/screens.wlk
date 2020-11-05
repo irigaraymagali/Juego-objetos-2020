@@ -95,6 +95,14 @@ object start{
     
    		posicionesParaGenerarMuros.forEach {posicion => game.addVisual(posicion)}
 }
+
+	method generarArbustos(){
+		const posicionesParaGenerarArbustos = []
+		
+		(0 .. 8).forEach{ num => posicionesParaGenerarArbustos.add(new Muro(position = aleatorio.nuevaPosicion()))}
+		
+		posicionesParaGenerarArbustos.forEach {posicion => game.addVisual(posicion)}
+	}
     
 }
 

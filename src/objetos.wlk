@@ -69,7 +69,7 @@ class Muro{
 	
 	var property position = game.at(0,0)
 	
-	var property image = "muro.png"
+	var property image = "madera.png"
 	
 	var property esAtravesable = false
 	
@@ -84,3 +84,8 @@ class Muro{
 	method chocasteConCarpincho(){
 	}
 }
+
+class Arbusto inherits Muro{
+	override method image() = "arbusto.png"
+}
+
