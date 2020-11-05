@@ -22,6 +22,7 @@ object juegoCarpinchoGaucho  {
  }
  
  method agregarPersonajes(){
+ 	  carpincho.position(game.center())
 	  game.addVisual(carpincho)
 	  game.addVisual(yaguarete)
     }

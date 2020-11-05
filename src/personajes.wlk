@@ -4,11 +4,11 @@ import carpinchos.*
 import objetos.*
 
 object carpincho{
-	var position = game.center()
+	var property position = game.at(4,8)
 	
-	const imagenDerecha = "carpincho right.png"
+	const property imagenDerecha = "carpincho right.png"
 	
-	const imagenIzquierda = "carpincho left.png"
+	const property imagenIzquierda = "carpincho left.png"
 	
 	const property esAtravesable = true
 	
@@ -23,9 +23,8 @@ object carpincho{
 }
 	
 	method moverseA(posicion, unaOrientacion){ 
-    
     orientacion = unaOrientacion 
-//    self.actualizarImagen() 
+    self.actualizarImagen() 
     
     if(self.puedeMoverAl(unaOrientacion)){ 
       position = posicion
@@ -33,14 +32,10 @@ object carpincho{
         
         }
   }
-	method mirarIzquierda(){
-		image = imagenIzquierda
-	}
-	
-	method mirarDerecha(){
-		image = imagenDerecha	
-	}
-	
+  
+   method actualizarImagen() {
+    image = orientacion.imagenDelJugador(self)
+  }	
 	method perdiste() = true
 	
 	
@@ -83,12 +78,10 @@ object carpincho{
 			
 		      if(yaguarete.position().x() > self.position().x()){
 			   self.moverseA(self.position().left(1), izquierda)
-			   self.image("carpincho right.png")
 			   } 
 			
 		         else{
 			      self.moverseA(self.position().right(1), derecha)
-			      self.image("carpincho right.png")
 			      } 
 	          }	
 	}	
@@ -104,8 +97,8 @@ object yaguarete {
 	
 	const property esAtravesable = true
 	
-	const imagenDerecha = "yaguarete right.png"
-	const imagenIzquierda = "yaguarete left.png"
+	const property imagenDerecha = "yaguarete right.png"
+	const property imagenIzquierda = "yaguarete left.png"
 	
 	var orientacion = derecha
 	
@@ -118,7 +111,7 @@ object yaguarete {
 	method moverseA(posicion, unaOrientacion){ 
     
     orientacion = unaOrientacion 
-//    self.actualizarImagen() 
+    self.actualizarImagen() 
     
     if(self.puedeMoverAl(unaOrientacion)){ 
       position = posicion
@@ -126,15 +119,6 @@ object yaguarete {
         
         }
   }
-	
-	method mirarIzquierda(){
-		image = imagenIzquierda
-	}
-	
-	method mirarDerecha(){
-		image = imagenDerecha	
-	}
-	
 	method perseguirCarpincho(){
 		
      	if(self.position().x() == carpincho.position().x()){ 
@@ -147,14 +131,16 @@ object yaguarete {
 		  }else{
 			
 		      if(carpincho.position().x() > self.position().x()){
-			   self.moverseA(self.position().right(1), derecha)
-			   self.image("yaguarete right.png")} 
+			   self.moverseA(self.position().right(1), derecha)} 
 			
 		         else{
-			      self.moverseA(self.position().left(1), izquierda)
-			      self.image("yaguarete left.png")} 
+			      self.moverseA(self.position().left(1), izquierda)} 
 	          }				
 	}
+	
+	   method actualizarImagen() {
+    image = orientacion.imagenDelJugador(self)
+  }
 	
 	method chocasteConCarpincho(){
 		juegoCarpinchoGaucho.perderJuego()	
