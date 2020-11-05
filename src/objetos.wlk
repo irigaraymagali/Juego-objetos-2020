@@ -48,26 +48,7 @@ class Alfajor inherits ObjetoAleatorio{
 	
 }
 
-class Hielo inherits ObjetoAleatorio{ 
-    override method image() = "hielo.png"
-	override method chocasteConCarpincho(){
-		self.congelar(carpincho)
-	}
-	override method chocasteConYaguarete(){
-		self.congelar(yaguarete)
-	}
-	
-	method congelar(personaje){
-	game.removeVisual(self)
-	personaje.estaCongelado(true)
-	game.schedule(3000, {personaje.estaCongelado(false)})
-	}
-}
 
-class Manzana inherits ObjetoAleatorio{ 
-    override method image() = "manzana.png"
-
-}
 
 class Muro{
 	
@@ -93,3 +74,12 @@ class Arbusto inherits Muro{
 	override method image() = "arbusto.png"
 }
 
+object mate{
+	method spawn(posicionSpawn){game.addVisual(new Mate(posicion = posicionSpawn))}
+}
+object mateDeOro{
+	method spawn(posicionSpawn){game.addVisual(new MateDeOro(posicion = posicionSpawn))}
+}
+object alfajor{
+	method spawn(posicionSpawn){game.addVisual(new Alfajor(posicion = posicionSpawn))}
+}

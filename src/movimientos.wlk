@@ -1,7 +1,7 @@
 import wollok.game.*
 import objetos.*
 import personajes.*
-
+import buffs.*
 
 object keyConfig{
 	method jugador1(personaje){
@@ -32,56 +32,38 @@ object aleatorio {
 	}
 }
 
-object spawner{
+object spawner{	
+	var property multiplicador = 1
 	
 	method estaOcupado(posicionObjeto){
 		return posicionObjeto.allElements().size()>0
 	}
 	
-	method spawnMate(){
-		var posicionObjeto = aleatorio.nuevaPosicion()
-		if(self.estaOcupado(posicionObjeto)){self.spawnMate()}
-		else{
-		game.addVisual(new Mate(posicion = posicionObjeto))
-		}
-	}
-	
-	method spawnMateDorado(){
-		var posicionObjeto = aleatorio.nuevaPosicion()
-		if(self.estaOcupado(posicionObjeto)){self.spawnMate()}
-		else{
-			game.addVisual(new MateDeOro(posicion = posicionObjeto))
-		}
-	}
-	
-	method spawnAlfajor(){
-		var posicionObjeto = aleatorio.nuevaPosicion()
-		if(self.estaOcupado(posicionObjeto)){self.spawnMate()}
-		else{
-		game.addVisual(new Alfajor(posicion = posicionObjeto))
-		}
+	method spawn(objeto){
 		
-	}
-	
-	method spawnHielo(){
 		var posicionObjeto = aleatorio.nuevaPosicion()
-		if(self.estaOcupado(posicionObjeto)){self.spawnMate()}
+		if(self.estaOcupado(posicionObjeto)){self.spawn(objeto)}
 		else{
-		game.addVisual(new Hielo(posicion = posicionObjeto))
+			objeto.spawn(posicionObjeto)
 		}
+	
 	}
 	
+
 	method spawnPorTiempo(){
-		game.onTick(3000, "spawn mate aleatoriamente", {self.spawnMate()})
-		game.onTick(15000, "spawn mate de oro aleatoriamente", {self.spawnMateDorado()})
-		game.onTick(30000, "spawn alfajor aleatoriamente", {self.spawnAlfajor()})
-		game.onTick(5000.randomUpTo(10000), "spawn hielo aleatoriamente", {self.spawnHielo()})
+		game.onTick(3000 / multiplicador, "spawn mate aleatoriamente", {self.spawn(mate)})
+		game.onTick(15000 / multiplicador, "spawn mate de oro aleatoriamente", {self.spawn(mateDeOro)})
+		game.onTick(30000 / multiplicador, "spawn alfajor aleatoriamente", {self.spawn(alfajor)})
+		game.onTick(5000.randomUpTo(10000), "spawn hielo aleatoriamente", {self.spawn(hielo)})
+		game.onTick(10000.randomUpTo(20000), "spawn manzana aleatoriamente", {self.spawn(manzana)})
 	}
 	
 	method apagarSpawner(){
 		game.removeTickEvent("spawn mate aleatoriamente")
 		game.removeTickEvent("spawn mate de oro aleatoriamente")
 		game.removeTickEvent("spawn alfajor aleatoriamente")
+		game.removeTickEvent("spawn hielo aleatoriamente")
+		game.removeTickEvent("spawn manzana aleatoriamente")
 	}
 }
 
