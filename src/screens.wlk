@@ -57,6 +57,7 @@ class SwitchArbustos{
 	
 	method chocasteConCarpincho(){
 		juegoCarpinchoGaucho.arbustosActivados(arbActivados)
+		game.sound("agarrarObjeto.mp3").play()
 	}
 	
 }
