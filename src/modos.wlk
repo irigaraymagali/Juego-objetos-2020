@@ -31,7 +31,10 @@ object dosJugadores{
 method configurarAcciones(){
 	spawner.spawnPorTiempo()                                                    
 	game.onCollideDo(carpincho,{visualColisionado=>visualColisionado.chocasteConCarpincho()})
+	game.onCollideDo(yaguarete,{visualColisionado=>visualColisionado.chocasteConYaguarete()})
 	}
+
+	
 	
 method perder(){
 	puntos.mostrarPuntaje()
