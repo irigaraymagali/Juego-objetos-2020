@@ -3,6 +3,7 @@ import movimientos.*
 import personajes.*
 import objetos.*
 import screens.*
+import carpinchos.*
 
 object modoCarpincho{
 	method configurarTeclas(){
@@ -49,6 +50,7 @@ object modoCazar{
 	}
 
 method configurarAcciones(){
+	juegoCarpinchoGaucho.arbustosActivados(true)
 	spawner.spawnPorTiempo()
 	game.onTick(200, "mover carpincho", {carpincho.huirDeyaguarete()})                                                     
 	game.onCollideDo(yaguarete,{visualColisionado=>visualColisionado.chocasteConYaguarete()})
