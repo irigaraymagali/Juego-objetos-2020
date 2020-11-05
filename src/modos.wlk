@@ -2,6 +2,7 @@ import wollok.game.*
 import movimientos.*
 import personajes.*
 import objetos.*
+import screens.*
 
 object modoCarpincho{
 	method configurarTeclas(){
@@ -21,6 +22,7 @@ method perder(){
 
 }
 
+
 object dosJugadores{
 	
 	method configurarTeclas(){
@@ -34,12 +36,13 @@ method configurarAcciones(){
 	game.onCollideDo(yaguarete,{visualColisionado=>visualColisionado.chocasteConYaguarete()})
 	}
 
-	
-	
 method perder(){
 	puntos.mostrarPuntaje()
  } 
+
 }
+
+
 object modoCazar{
 	method configurarTeclas(){
 		keyConfig.jugador1(yaguarete)

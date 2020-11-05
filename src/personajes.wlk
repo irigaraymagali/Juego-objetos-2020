@@ -147,21 +147,5 @@ object yaguarete {
 	}
 }
 
-object puntos {
-	var property puntaje = 0
-	
-	const property position = game.center()
-	
-	const property image = "carpincho right.png"	
-	
-	method mostrarPuntaje(){
-		game.addVisual(self)
-		game.say(self, "¡Perdiste! Tus puntos son: " + puntaje)
-		game.sound("perdiste.mp3").play()
-	}
-	
-	method suma(puntosObtenidos){
-		puntaje = puntaje + puntosObtenidos
-	}
-}
+
 

@@ -29,9 +29,12 @@ object juegoCarpinchoGaucho  {
     }
 
 method perderJuego(){
+	spawner.apagarSpawner()
 	game.clear()
+	screenFinal.iniciar()
+	game.sound("perdiste.mp3").play()
 	self.modo().perder()
-	game.schedule(3000,{game.stop()})
+	game.schedule(5000,{game.stop()})
 }
 
 }

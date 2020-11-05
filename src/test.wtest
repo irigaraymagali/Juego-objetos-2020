@@ -2,6 +2,7 @@ import personajes.*
 import objetos.*
 import wollok.game.*
 import movimientos.*
+import screens.*
 
 describe"Modo carpincho"{
 	test "Al colisionar con el yaguarete termina el juego"{

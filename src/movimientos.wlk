@@ -50,6 +50,12 @@ object spawner{
 		game.onTick(15000, "spawn mate de oro aleatoriamente", {self.spawnMateDorado()})
 		game.onTick(30000, "spawn alfajor aleatoriamente", {self.spawnAlfajor()})
 	}
+	
+	method apagarSpawner(){
+		game.removeTickEvent("spawn mate aleatoriamente")
+		game.removeTickEvent("spawn mate de oro aleatoriamente")
+		game.removeTickEvent("spawn alfajor aleatoriamente")
+	}
 }
 
 object arriba {

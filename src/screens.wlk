@@ -7,7 +7,7 @@ import carpinchos.*
 
 object fondo{
 	var property image = "fondocampo.png"
-	var property position = game.at(1, 1)
+	var property position = game.at(0, 0)
 	const property esAtravesable = true
 	method chocasteConCarpincho(){}
 	method chocasteConYaguarete(){}
@@ -96,4 +96,28 @@ object start{
    		posicionesParaGenerarMuros.forEach {posicion => game.addVisual(posicion)}
 }
     
+}
+
+object screenFinal{
+	method iniciar(){
+		game.addVisual(fondo)
+		fondo.image("perdiste.png")
+	}
+}
+
+object puntos {
+	var property puntaje = 0
+	
+	const property position = game.at(14,10)
+	
+	const property image = "puntos.png"	
+	
+	method mostrarPuntaje(){
+		game.addVisual(self)
+		game.say(self, "¡Perdiste! Tus puntos son: " + puntaje)
+	}
+	
+	method suma(puntosObtenidos){
+		puntaje = puntaje + puntosObtenidos
+	}
 }

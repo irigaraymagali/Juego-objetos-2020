@@ -1,6 +1,7 @@
 import wollok.game.*
 import movimientos.*
 import personajes.*
+import screens.*
 
 class ObjetoAleatorio {
 	const property posicion

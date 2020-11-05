@@ -8,7 +8,6 @@ import screens.*
 program game {
 	game.title("Carpincho gaucho")
 	start.iniciar()
-	//juegoCarpinchoGaucho.iniciar() 
 }
 
  
