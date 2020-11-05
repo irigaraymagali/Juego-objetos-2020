@@ -7,7 +7,7 @@ import screens.*
 
 object juegoCarpinchoGaucho  {     
 	var property modo = modoCarpincho //MODOS: modoCarpincho, dosJugadores o modoCazar
-	var property arbustosActivados = true
+	var property arbustosActivados = false
 	method iniciar() {
 		self.agregarPersonajes()
 		start.generarMuros()

@@ -3,24 +3,55 @@ import objetos.*
 import wollok.game.*
 import movimientos.*
 import screens.*
+import buffs.*
+import carpinchos.*
 
 describe"Modo carpincho"{
-	test "Al colisionar con el yaguarete termina el juego"{
-		carpincho.moverseA(game.center(),derecha)
-		yaguarete.moverseA(game.center(),derecha)
-		assert.that(carpincho.perdiste())
-	}
-	test "El carpincho al colisionar con el mate se suman 50 puntos"{
-		const mate = new Mate(posicion = game.center())
-		carpincho.moverseA(mate.posicion(),derecha)
-		assert.equals(50,puntos.puntaje())
+		test "el carpincho se no se puede mover si está congelado"{
+		game.clear()
+		game.addVisual(carpincho)
+		carpincho.estaCongelado(true)
+		assert.notThat(carpincho.puedeMoverAl(derecha))
+	
+}
+	
+	test "si el carpincho se mueve a la izquierda su imagen se cambia"{
+		game.clear()
+		juegoCarpinchoGaucho.iniciar()
+		carpincho.moverseA(game.at(15,14),derecha)
+		carpincho.moverseA(carpincho.position().left(1), izquierda)
+		assert.equals(carpincho.image(), "carpincho left.png")
 	}
 }
 
 describe"Modo cazar"{
 	test "Al colisionar con el carpincho termina el juego"{
+		game.clear()
 		carpincho.moverseA(game.center(),derecha) 
 		yaguarete.moverseA(game.center(),derecha)
 		assert.that(carpincho.perdiste())
 	}
 }
+
+describe "modo 2 jugadores"{
+	test "si los 2 jugadores colisionan se termina el juego"{
+		carpincho.moverseA(game.at(10,10),derecha) 
+		yaguarete.moverseA(game.at(11, 10),derecha)
+		yaguarete.moverseA(yaguarete.position().left(1), izquierda)
+		assert.that(carpincho.perdiste())
+	}
+	
+	test "el yaguarete no se puede mover si está congelado"{
+		game.clear()
+		game.addVisual(yaguarete)
+		yaguarete.estaCongelado(true)
+		assert.notThat(yaguarete.puedeMoverAl(derecha))
+	
+}
+	
+
+}
+
+
+
+
