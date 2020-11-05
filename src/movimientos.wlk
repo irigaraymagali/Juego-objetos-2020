@@ -27,7 +27,7 @@ object keyConfig{
 }
 
 }
- 
+
 object aleatorio {
 	var posicion = game.at(8, 8)
 
