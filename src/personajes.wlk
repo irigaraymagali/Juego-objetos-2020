@@ -12,6 +12,8 @@ object carpincho{
 	
 	const property esAtravesable = true
 	
+	var property estaCongelado = false
+	
 	var orientacion = derecha
 	
 	var property image = imagenDerecha
@@ -19,7 +21,9 @@ object carpincho{
 	method position() = position
 	
 	method puedeMoverAl(unaOrientacion) {
-  	return game.getObjectsIn(unaOrientacion.posicionEnEsaDireccion(self)).all {unObj => unObj.esAtravesable()}
+		if(self.estaCongelado()){
+  			return false
+  	}else return game.getObjectsIn(unaOrientacion.posicionEnEsaDireccion(self)).all {unObj => unObj.esAtravesable()}
 }
 	
 	method moverseA(posicion, unaOrientacion){ 
@@ -38,34 +42,6 @@ object carpincho{
   }	
 	method perdiste() = true
 	
-	
-		
-//	method perseguirManzanaYHuir(){
-//		const mateNuevo = new Mate(posicion= aleatorio.nuevaPosicion())
-//		
-//		if(self.position().x() == mateNuevo.position().x()){ 
-//			
-//		    if(mateNuevo.position().y() > self.position().y()){
-//			 self.moverseA(self.position().up(1))} 
-//			
-//		       else{
-//			     self.moverseA(self.position().down(1))}
-//		  }else{
-//			
-//		      if(mateNuevo.position().x() > self.position().x()){
-//			   self.moverseA(self.position().right(1))
-//			   self.image("carpincho right.png")
-//			   } 
-//			
-//		         else{
-//			      self.moverseA(self.position().left(1))
-//			      self.image("carpincho left.png")
-//			      } 
-//	          }	
-//	          
-//	          self.huirDeyaguarete()
-//	}
-
 	method huirDeyaguarete(){
 		if(self.position().x() == yaguarete.position().x()){ 
 			
@@ -98,6 +74,9 @@ object yaguarete {
 	const property esAtravesable = true
 	
 	const property imagenDerecha = "yaguarete right.png"
+	
+	var property estaCongelado = false
+	
 	const property imagenIzquierda = "yaguarete left.png"
 	
 	var orientacion = derecha
@@ -105,7 +84,9 @@ object yaguarete {
 	method position() = position
 	
 	method puedeMoverAl(unaOrientacion) {
-  		return game.getObjectsIn(unaOrientacion.posicionEnEsaDireccion(self)).all {unObj => unObj.esAtravesable()}
+		if(self.estaCongelado()){
+  			return false
+  	}else return game.getObjectsIn(unaOrientacion.posicionEnEsaDireccion(self)).all {unObj => unObj.esAtravesable()}
 }
 	
 	method moverseA(posicion, unaOrientacion){ 
