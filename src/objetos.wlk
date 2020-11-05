@@ -48,21 +48,25 @@ class Alfajor inherits ObjetoAleatorio{
 	
 }
 
-object manzana {
-	const movimiento = aleatorio
-	var property position
-	var property image = "manzana.png"
+class Hielo inherits ObjetoAleatorio{ 
+    override method image() = "hielo.png"
+	override method chocasteConCarpincho(){
+		self.congelar(carpincho)
+	}
+	override method chocasteConYaguarete(){
+		self.congelar(yaguarete)
+	}
 	
-	method moverseA(nuevaPosicion){
-		position = nuevaPosicion
+	method congelar(personaje){
+	game.removeVisual(self)
+	personaje.estaCongelado(true)
+	game.schedule(3000, {personaje.estaCongelado(false)})
 	}
-	method movete(){
-		movimiento.nuevaPosicion()
-	}
-	method chocasteConYaguarete(){
-		game.removeVisual(self)
-		game.sound("agarrarObjeto.mp3").play()
-	}
+}
+
+class Manzana inherits ObjetoAleatorio{ 
+    override method image() = "manzana.png"
+
 }
 
 class Muro{

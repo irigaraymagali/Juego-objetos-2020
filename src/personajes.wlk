@@ -12,6 +12,8 @@ object carpincho{
 	
 	const property esAtravesable = true
 	
+	var property estaCongelado = false
+	
 	var orientacion = derecha
 	
 	var property image = imagenDerecha
@@ -22,7 +24,9 @@ object carpincho{
 	method position() = position
 	
 	method puedeMoverAl(unaOrientacion) {
-  	return game.getObjectsIn(unaOrientacion.posicionEnEsaDireccion(self)).all {unObj => unObj.esAtravesable()}
+		if(self.estaCongelado()){
+  			return false
+  	}else return game.getObjectsIn(unaOrientacion.posicionEnEsaDireccion(self)).all {unObj => unObj.esAtravesable()}
 }
 	
 	method moverseA(posicion, unaOrientacion){ 
@@ -45,7 +49,6 @@ object carpincho{
 		if(distanciaX < 10 || distanciaY < 10){
 			self.huirDeyaguarete()
 		}
-		//game.say(self,"Atrapame")
 	}
 
 	method huirDeyaguarete(){
@@ -80,6 +83,9 @@ object yaguarete {
 	const property esAtravesable = true
 	
 	const property imagenDerecha = "yaguarete right.png"
+	
+	var property estaCongelado = false
+	
 	const property imagenIzquierda = "yaguarete left.png"
 	
 	var orientacion = derecha
@@ -87,7 +93,9 @@ object yaguarete {
 	method position() = position
 	
 	method puedeMoverAl(unaOrientacion) {
-  		return game.getObjectsIn(unaOrientacion.posicionEnEsaDireccion(self)).all {unObj => unObj.esAtravesable()}
+		if(self.estaCongelado()){
+  			return false
+  	}else return game.getObjectsIn(unaOrientacion.posicionEnEsaDireccion(self)).all {unObj => unObj.esAtravesable()}
 }
 	
 	method moverseA(posicion, unaOrientacion){ 

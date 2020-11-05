@@ -33,11 +33,11 @@ object aleatorio {
 }
 
 object spawner{
-		
+	
 	method estaOcupado(posicionObjeto){
 		return posicionObjeto.allElements().size()>0
 	}
-		
+	
 	method spawnMate(){
 		var posicionObjeto = aleatorio.nuevaPosicion()
 		if(self.estaOcupado(posicionObjeto)){self.spawnMate()}
@@ -63,10 +63,19 @@ object spawner{
 		
 	}
 	
+	method spawnHielo(){
+		var posicionObjeto = aleatorio.nuevaPosicion()
+		if(self.estaOcupado(posicionObjeto)){self.spawnMate()}
+		else{
+		game.addVisual(new Hielo(posicion = posicionObjeto))
+		}
+	}
+	
 	method spawnPorTiempo(){
 		game.onTick(3000, "spawn mate aleatoriamente", {self.spawnMate()})
 		game.onTick(15000, "spawn mate de oro aleatoriamente", {self.spawnMateDorado()})
 		game.onTick(30000, "spawn alfajor aleatoriamente", {self.spawnAlfajor()})
+		game.onTick(5000.randomUpTo(10000), "spawn hielo aleatoriamente", {self.spawnHielo()})
 	}
 	
 	method apagarSpawner(){
