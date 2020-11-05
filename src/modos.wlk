@@ -35,10 +35,8 @@ method configurarAcciones(){
 	
 method perder(){
 	puntos.mostrarPuntaje()
- }
- 
+ } 
 }
-
 object modoCazar{
 	method configurarTeclas(){
 		keyConfig.jugador1(yaguarete)
