@@ -3,10 +3,8 @@ import movimientos.*
 import carpinchos.*
 import objetos.*
 
-const carpincho = new CarpinchoGaucho()
-
-class CarpinchoGaucho{
-	var position = game.center()
+object carpincho{
+	var property position = game.at(4,8)
 	
 	const property imagenDerecha = "carpincho right.png"
 	

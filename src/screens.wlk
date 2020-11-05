@@ -69,18 +69,18 @@ object start{
     }
 	
 	method configurarTeclas(){
-		keyConfig.jugador1(carpinchoSelector)
+		keyConfig.jugador1(carpincho)
 	}
 	
 	method agregarPersonajes(){
-	  	game.addVisual(carpinchoSelector)
+	  	game.addVisual(carpincho)
 	  	game.addVisual(botonModoCarpincho)
 	  	game.addVisual(botonModoPvp)
 	  	game.addVisual(botonModoCazar)
     }
     
     method configurarAcciones(){
-    	game.onCollideDo(carpinchoSelector,{visualColisionado=>visualColisionado.chocasteConCarpincho()})
+    	game.onCollideDo(carpincho,{visualColisionado=>visualColisionado.chocasteConCarpincho()})
     }
     
   	method generarMuros() {
@@ -97,5 +97,3 @@ object start{
 }
     
 }
-
-const carpinchoSelector = new CarpinchoGaucho(position = game.at(4, 8))
