@@ -22,6 +22,7 @@ method perder(){
 }
 
 object dosJugadores{
+	
 	method configurarTeclas(){
 		keyConfig.jugador1(carpincho)
 		keyConfig.jugador2(yaguarete)
@@ -30,27 +31,28 @@ object dosJugadores{
 method configurarAcciones(){
 	spawner.spawnPorTiempo()                                                    
 	game.onCollideDo(carpincho,{visualColisionado=>visualColisionado.chocasteConCarpincho()})
+	game.onCollideDo(yaguarete,{visualColisionado=>visualColisionado.chocasteConYaguarete()})
 	}
+
+	
 	
 method perder(){
 	puntos.mostrarPuntaje()
- }
- 
+ } 
 }
-
 object modoCazar{
 	method configurarTeclas(){
 		keyConfig.jugador1(yaguarete)
 	}
 
 method configurarAcciones(){
-	//game.onTick(5000, "spawn mate aleatoriamente", {spawner.spawnMate()})
-	//game.onTick(5000, "spawn manzana aleatoriamente", {manzana.movete() game.addVisual(manzana)})
+	spawner.spawnPorTiempo()
 	game.onTick(200, "mover carpincho", {carpincho.huirDeyaguarete()})                                                     
 	game.onCollideDo(yaguarete,{visualColisionado=>visualColisionado.chocasteConYaguarete()})
 	}		
 
 method perder(){
+	game.addVisual(puntos)
 	game.say(puntos, "¡ganaste!")
  }
 }

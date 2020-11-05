@@ -5,15 +5,9 @@ import objetos.*
 import modos.*
 import carpinchos.*
 
-object pantallaFinal{
-	method iniciar(){
-		fondo.image("perdiste.png")
-	}
-}
-
 object fondo{
 	var property image = "fondocampo.png"
-	var property position = game.at(0, 0)
+	var property position = game.at(1, 1)
 	const property esAtravesable = true
 	method chocasteConCarpincho(){}
 	method chocasteConYaguarete(){}
