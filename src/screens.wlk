@@ -104,35 +104,4 @@ object start{
     
 }
 
-object carpinchoSelector{
-	var property position = game.at(4, 10)
-	const imagenIzquierda = "carpincho left.png"
-	
-	var property image = "carpincho right.png"
-	
-	var orientacion = derecha
-	
-	method position() = position
-	
-	method puedeMoverAl(unaOrientacion) {
-  	return game.getObjectsIn(unaOrientacion.posicionEnEsaDireccion(self)).all {unObj => unObj.esAtravesable()}
-}
-	
-	method moverseA(posicion, unaOrientacion){ 
-    
-    orientacion = unaOrientacion 
-//    self.actualizarImagen() 
-    
-    if(self.puedeMoverAl(unaOrientacion)){ 
-      position = posicion
-    } else {
-        
-        }
-  }
-	method mirarDerecha(){
-		image = "carpincho right.png"	
-	}
-	method mirarIzquierda(){
-		image = imagenIzquierda
-	}
-}
+const carpinchoSelector = new CarpinchoGaucho(position = game.at(4, 8))
