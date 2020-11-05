@@ -14,6 +14,7 @@ object fondo{
 }
 
 class Boton{
+	
 	var property image
 	var posicion
 	var modo
@@ -58,8 +59,7 @@ class SwitchArbustos{
 	method chocasteConCarpincho(){
 		juegoCarpinchoGaucho.arbustosActivados(arbActivados)
 		game.sound("agarrarObjeto.mp3").play()
-	}
-	
+	}	
 }
 
 const switchArbustosSi = new SwitchArbustos(arbActivados = true, image = "switchArbustosSi.png", position = game.at(7, 1))
