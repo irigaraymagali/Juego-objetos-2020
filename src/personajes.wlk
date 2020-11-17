@@ -16,10 +16,10 @@ object carpincho{
 	
 	var orientacion = derecha
 	
-	var property image = imagenDerecha
-	
 	var distanciaX = self.position().x() - yaguarete.position().x()
 	var distanciaY = self.position().y() - yaguarete.position().y()
+	
+	method image() = orientacion.imagenDelJugador(self)
 	
 	method position() = position
 	
@@ -31,7 +31,6 @@ object carpincho{
 	
 	method moverseA(posicion, unaOrientacion){ 
     orientacion = unaOrientacion 
-    self.actualizarImagen() 
     
     if(self.puedeMoverAl(unaOrientacion)){ 
       position = posicion
@@ -40,9 +39,6 @@ object carpincho{
            }
   }
   
-   method actualizarImagen() {
-    image = orientacion.imagenDelJugador(self)
-  }	
 	method perdiste() = true
 		
 	method alejarseDeYaguarete(){

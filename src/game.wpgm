@@ -10,4 +10,3 @@ program game {
 	start.iniciar()
 }
 
- 

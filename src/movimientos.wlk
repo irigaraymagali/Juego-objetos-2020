@@ -69,12 +69,12 @@ object spawner{
 
 object arriba {
   method posicionEnEsaDireccion(jugador) = jugador.position().up(1)
-  method imagenDelJugador(jugador) = jugador.image()
+  method imagenDelJugador(jugador) = jugador.imagenDerecha()
 }
 
 object abajo {
   method posicionEnEsaDireccion(jugador) = jugador.position().down(1)
-  method imagenDelJugador(jugador) = jugador.image()
+  method imagenDelJugador(jugador) = jugador.imagenDerecha()
 }
 
 object izquierda {

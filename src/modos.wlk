@@ -51,6 +51,7 @@ object modoCazar{
 
 method configurarAcciones(){
 	juegoCarpinchoGaucho.arbustosActivados(true)
+	//screenFinal.imagen("yaguareteGanador.png")
 	spawner.spawnPorTiempo()
 	game.onTick(200, "mover carpincho", {carpincho.alejarseDeYaguarete()})                                                     
 	game.onCollideDo(yaguarete,{visualColisionado=>visualColisionado.chocasteConYaguarete()})

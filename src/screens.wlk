@@ -25,7 +25,6 @@ class Boton{
 	
 	method chocasteConCarpincho(){
 		juegoCarpinchoGaucho.modo(modo)
-		game.clear()
 		juegoCarpinchoGaucho.iniciar()
 		game.sound("start.mp3").play()
 	}	
