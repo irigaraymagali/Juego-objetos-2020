@@ -77,7 +77,7 @@ object carpincho inherits Personaje {
 }
 
 object yaguarete inherits Personaje  {
-	var position = game.at (1,1)
+	var property position = game.at (1,1)
 	var property image = "yaguarete right.png"
 	
 	const property imagenDerecha = "yaguarete right.png"
@@ -113,9 +113,9 @@ object yaguarete inherits Personaje  {
 		juegoCarpinchoGaucho.perderJuego()	
 	}
 	
-//	override method cambiarPosicion(posicion) {
-//		self.position(posicion)
-//	}
+	override method cambiarPosicion(posicion) {
+		self.position(posicion)
+	}
 }
 
 
