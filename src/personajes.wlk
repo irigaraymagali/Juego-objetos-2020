@@ -5,7 +5,6 @@ import objetos.*
 
 class Personaje{
 	const property esAtravesable = true
-	
 	var property estaCongelado = false
 	
 	var orientacion = derecha
@@ -13,12 +12,12 @@ class Personaje{
 	method puedeMoverAl(unaOrientacion) {
 		if(self.estaCongelado()){
   			return false
-  	}else return game.getObjectsIn(unaOrientacion.posicionEnEsaDireccion(self)).all {unObj => unObj.esAtravesable()}
-}
+  		}else return game.getObjectsIn(unaOrientacion.posicionEnEsaDireccion(self)).all {unObj => unObj.esAtravesable()}
+	}
 	method cambiarPosicion(posicion){}
 	
 	method moverseA(posicion, unaOrientacion){ 
-    orientacion = unaOrientacion 
+    	orientacion = unaOrientacion 
     
     if(self.puedeMoverAl(unaOrientacion)){ 
       self.cambiarPosicion(posicion)
@@ -32,12 +31,10 @@ object carpincho inherits Personaje {
 	const property imagenDerecha = "carpincho right.png"
 	const property imagenIzquierda = "carpincho left.png"
 		
-	var distanciaX = self.position().x() - yaguarete.position().x()
-	var distanciaY = self.position().y() - yaguarete.position().y()
+	const distanciaX = self.position().x() - yaguarete.position().x()
+	const distanciaY = self.position().y() - yaguarete.position().y()
 	
 	method image() = orientacion.imagenDelJugador(self)
-	
-	method position() = position
 	
 	override method cambiarPosicion(posicion) {
 		self.position(posicion)
@@ -81,10 +78,7 @@ object yaguarete inherits Personaje  {
 	var property image = "yaguarete right.png"
 	
 	const property imagenDerecha = "yaguarete right.png"
-	
 	const property imagenIzquierda = "yaguarete left.png"
-
-	method position() = position
 	
 	method perseguirCarpincho(){
 		
@@ -105,8 +99,8 @@ object yaguarete inherits Personaje  {
 	          }				
 	}
 	
-	   method actualizarImagen() {
-    image = orientacion.imagenDelJugador(self)
+	method actualizarImagen() {
+    	image = orientacion.imagenDelJugador(self)
   }
 	
 	method chocasteConCarpincho(){
