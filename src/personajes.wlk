@@ -3,19 +3,35 @@ import movimientos.*
 import carpinchos.*
 import objetos.*
 
-object carpincho{
-	var property position = game.at(4,8)
-	
-	const property imagenDerecha = "carpincho right.png"
-	
-	const property imagenIzquierda = "carpincho left.png"
-	
+class Personaje{
 	const property esAtravesable = true
 	
 	var property estaCongelado = false
 	
 	var orientacion = derecha
 	
+	method puedeMoverAl(unaOrientacion) {
+		if(self.estaCongelado()){
+  			return false
+  	}else return game.getObjectsIn(unaOrientacion.posicionEnEsaDireccion(self)).all {unObj => unObj.esAtravesable()}
+}
+	method cambiarPosicion(posicion){}
+	
+	method moverseA(posicion, unaOrientacion){ 
+    orientacion = unaOrientacion 
+    
+    if(self.puedeMoverAl(unaOrientacion)){ 
+      self.cambiarPosicion(posicion)
+    } 
+  }
+}
+
+object carpincho inherits Personaje {
+	var property position = game.at(4,8)
+	
+	const property imagenDerecha = "carpincho right.png"
+	const property imagenIzquierda = "carpincho left.png"
+		
 	var distanciaX = self.position().x() - yaguarete.position().x()
 	var distanciaY = self.position().y() - yaguarete.position().y()
 	
@@ -23,21 +39,9 @@ object carpincho{
 	
 	method position() = position
 	
-	method puedeMoverAl(unaOrientacion) {
-		if(self.estaCongelado()){
-  			return false
-  	}else return game.getObjectsIn(unaOrientacion.posicionEnEsaDireccion(self)).all {unObj => unObj.esAtravesable()}
-}
-	
-	method moverseA(posicion, unaOrientacion){ 
-    orientacion = unaOrientacion 
-    
-    if(self.puedeMoverAl(unaOrientacion)){ 
-      position = posicion
-    } else {
-     
-           }
-  }
+	override method cambiarPosicion(posicion) {
+		self.position(posicion)
+	}
   
 	method perdiste() = true
 		
@@ -72,39 +76,16 @@ object carpincho{
 	}
 }
 
-object yaguarete {
+object yaguarete inherits Personaje  {
 	var position = game.at (1,1)
 	var property image = "yaguarete right.png"
 	
-	const property esAtravesable = true
-	
 	const property imagenDerecha = "yaguarete right.png"
 	
-	var property estaCongelado = false
-	
 	const property imagenIzquierda = "yaguarete left.png"
-	
-	var orientacion = derecha
-	
+
 	method position() = position
 	
-	method puedeMoverAl(unaOrientacion) {
-		if(self.estaCongelado()){
-  			return false
-  	}else return game.getObjectsIn(unaOrientacion.posicionEnEsaDireccion(self)).all {unObj => unObj.esAtravesable()}
-}
-	
-	method moverseA(posicion, unaOrientacion){ 
-    
-    orientacion = unaOrientacion 
-    self.actualizarImagen() 
-    
-    if(self.puedeMoverAl(unaOrientacion)){ 
-      position = posicion
-    } else {
-        
-        }
-  }
 	method perseguirCarpincho(){
 		
      	if(self.position().x() == carpincho.position().x()){ 
@@ -131,6 +112,10 @@ object yaguarete {
 	method chocasteConCarpincho(){
 		juegoCarpinchoGaucho.perderJuego()	
 	}
+	
+//	override method cambiarPosicion(posicion) {
+//		self.position(posicion)
+//	}
 }
 
 
