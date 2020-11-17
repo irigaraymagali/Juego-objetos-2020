@@ -26,17 +26,14 @@ class Personaje{
     } 
   }
   
-  method nombre() = ""
-  
   method imagenDerecha() = self.nombre() + " right.png"
   method imagenIzquierda() = self.nombre() + " left.png"
+  
+  method nombre() = ""
 }
 
 object carpincho inherits Personaje {
 	var property position = game.at(4,8)
-	
-//	const property imagenDerecha = "carpincho right.png"
-//	const property imagenIzquierda = "carpincho left.png"
 		
 	const distanciaX = self.position().x() - yaguarete.position().x()
 	const distanciaY = self.position().y() - yaguarete.position().y()
@@ -82,10 +79,7 @@ object carpincho inherits Personaje {
 
 object yaguarete inherits Personaje  {
 	var property position = game.at (1,1)
-	
-//	const property imagenDerecha = "yaguarete right.png"
-//	const property imagenIzquierda = "yaguarete left.png"
-	
+		
 	override method nombre() = "yaguarete"
 	
 	override method cambiarPosicion(posicion) {
