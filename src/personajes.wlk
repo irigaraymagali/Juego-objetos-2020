@@ -34,7 +34,7 @@ class Personaje{
 }
 
 object carpincho inherits Personaje {
-	var property position = game.at(4,8)
+	var property position = game.center()
 		
 	const distanciaX = self.position().x() - yaguarete.position().x()
 	const distanciaY = self.position().y() - yaguarete.position().y()

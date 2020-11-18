@@ -7,13 +7,14 @@ import screens.*
 
 object juegoCarpinchoGaucho  {     
 	var property modo = modoCarpincho //MODOS: modoCarpincho, dosJugadores o modoCazar
-	var property arbustosActivados = false
+	var property arbustosActivados = true
+	var property dificultad = normal
 	method iniciar() {
 		game.clear()
 		self.agregarPersonajes()
 		start.generarMuros()
 		modo.configurarTeclas()
-		modo.configurarAcciones()
+		modo.configurarAcciones(dificultad)
 	if(arbustosActivados){
 		start.generarArbustos()
 	}
@@ -31,7 +32,7 @@ method perderJuego(){
 	game.clear()
 	screenFinal.iniciar()
 	game.sound("perdiste.mp3").play()
-	self.modo().perder()
+	self.modo().terminarPartida()
 	game.schedule(5000,{game.stop()})
 }
 

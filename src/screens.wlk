@@ -64,16 +64,36 @@ class SwitchArbustos{
 const switchArbustosSi = new SwitchArbustos(arbActivados = true, image = "switchArbustosSi.png", position = game.at(7, 1))
 const switchArbustosNo = new SwitchArbustos(arbActivados = false, image = "switchArbustosNo.png", position = game.at(9,1))
 
+class SwitchDificultad{
+	const dificultad
+	var property image
+	var property position
+	
+	const property esAtravesable = true
+	
+	method chocasteConCarpincho(){
+		juegoCarpinchoGaucho.dificultad(dificultad)
+		game.sound("agarrarObjeto.mp3").play()
+	}
+		
+}
+
+const botonNormal = new SwitchDificultad(dificultad = normal, image = "dificultadNormal.png", position = game.at(2,12))
+
+const botonDificil = new SwitchDificultad(dificultad = dificil, image = "dificultadDificil.png", position = game.at(2,8))
+
+const botonExperto = new SwitchDificultad(dificultad = experto, image = "dificultadExperto.png", position = game.at(2,4)) 
+
 object start{
 	
 	method iniciar() {
-		game.addVisual(fondo)
+		self.agregarFondo()
 		self.configurarJuego()
 		self.agregarPersonajes()
 		self.configurarTeclas()
 		self.configurarAcciones()
 		self.generarMuros()
-		self.agregarSwitchArbustos()
+		self.agregarBotones()
 		game.start()
 		
 	}
@@ -85,6 +105,10 @@ object start{
 	game.cellSize(50)
 	game.boardGround("fondocampo.png")
     }
+    
+    method agregarFondo(){
+    	game.addVisual(fondo)
+    }
 	
 	method configurarTeclas(){
 		keyConfig.jugador1(carpincho)
@@ -92,18 +116,22 @@ object start{
 	
 	method agregarPersonajes(){
 	  	game.addVisual(carpincho)
-	  	game.addVisual(botonModoCarpincho)
-	  	game.addVisual(botonModoPvp)
-	  	game.addVisual(botonModoCazar)
+	  	
     }
     
     method configurarAcciones(){
     	game.onCollideDo(carpincho,{visualColisionado=>visualColisionado.chocasteConCarpincho()})
     }
     
-    method agregarSwitchArbustos(){
+    method agregarBotones(){
+    	game.addVisual(botonModoCarpincho)
+	  	game.addVisual(botonModoPvp)
+	  	game.addVisual(botonModoCazar)
     	game.addVisual(switchArbustosSi)
     	game.addVisual(switchArbustosNo)
+    	game.addVisual(botonNormal)
+    	game.addVisual(botonDificil)
+    	game.addVisual(botonExperto)
     }
     
   	method generarMuros() {

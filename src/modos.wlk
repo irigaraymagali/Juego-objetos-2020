@@ -10,14 +10,14 @@ object modoCarpincho{
 		keyConfig.jugador1(carpincho)
 	}
 
-method configurarAcciones(){
+method configurarAcciones(dificultad){
 	spawner.spawnPorTiempo()
-	game.onTick(400, "mover yaguarete", {yaguarete.perseguirCarpincho()})                                                     
+	game.onTick(dificultad.velocidad(), "mover yaguarete", {yaguarete.perseguirCarpincho()})                                                     
 	game.onCollideDo(carpincho,{visualColisionado=>visualColisionado.chocasteConCarpincho()})
 	}		
 
 
-method perder(){
+method terminarPartida(){
 	puntos.mostrarPuntaje()
  }
 
@@ -31,13 +31,13 @@ object dosJugadores{
 		keyConfig.jugador2(yaguarete)
 	}
 
-method configurarAcciones(){
+method configurarAcciones(dificultad){
 	spawner.spawnPorTiempo()                                                    
 	game.onCollideDo(carpincho,{visualColisionado=>visualColisionado.chocasteConCarpincho()})
 	game.onCollideDo(yaguarete,{visualColisionado=>visualColisionado.chocasteConYaguarete()})
 	}
 
-method perder(){
+method terminarPartida(){
 	puntos.mostrarPuntaje()
  } 
 
@@ -49,16 +49,30 @@ object modoCazar{
 		keyConfig.jugador1(yaguarete)
 	}
 
-method configurarAcciones(){
+method configurarAcciones(dificultad){
 	juegoCarpinchoGaucho.arbustosActivados(true)
 	//screenFinal.imagen("yaguareteGanador.png")
 	spawner.spawnPorTiempo()
-	game.onTick(200, "mover carpincho", {carpincho.alejarseDeYaguarete()})                                                     
+	game.onTick(dificultad.velocidad(), "mover carpincho", {carpincho.alejarseDeYaguarete()})                                                     
 	game.onCollideDo(yaguarete,{visualColisionado=>visualColisionado.chocasteConYaguarete()})
 	}		
 
-method perder(){
+method terminarPartida(){
 	game.addVisual(puntos)
 	game.say(puntos, "¡Ganaste!")
  }
+}
+
+// DIFICULTADES
+
+object normal{
+	method velocidad() = 400
+}
+
+object dificil{
+	method velocidad() = 200 
+}
+
+object experto{
+	method velocidad() = 100
 }
