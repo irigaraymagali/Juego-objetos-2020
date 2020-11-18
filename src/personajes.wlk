@@ -18,11 +18,12 @@ class Personaje{
 	}
 	method cambiarPosicion(posicion){}
 	
-	method moverseA(posicion, unaOrientacion){ 
-    	orientacion = unaOrientacion 
+	method moverseA(direccion){ 
+    	orientacion = direccion
+    	
     
-    if(self.puedeMoverAl(unaOrientacion)){ 
-      self.cambiarPosicion(posicion)
+    if(self.puedeMoverAl(direccion)){ 
+      self.cambiarPosicion(direccion.posicionEnEsaDireccion(self))
     } 
   }
   
@@ -56,18 +57,18 @@ object carpincho inherits Personaje {
 		if(self.position().x() == yaguarete.position().x()){ 
 			
 		    if(yaguarete.position().y() > self.position().y()){
-			 self.moverseA(self.position().down(1), abajo)} 
+			 self.moverseA(abajo)} 
 			
 		       else{
-			     self.moverseA(self.position().up(1), arriba)}
+			     self.moverseA(arriba)}
 		  }else{
 			
 		      if(yaguarete.position().x() > self.position().x()){
-			   self.moverseA(self.position().left(1), izquierda)
+			   self.moverseA(izquierda)
 			   } 
 			
 		         else{
-			      self.moverseA(self.position().right(1), derecha)
+			      self.moverseA(derecha)
 			      } 
 	          }	
 	}	
@@ -91,17 +92,17 @@ object yaguarete inherits Personaje  {
      	if(self.position().x() == carpincho.position().x()){ 
 			
 		    if(carpincho.position().y() > self.position().y()){
-			 self.moverseA(self.position().up(1), arriba)} 
+			 self.moverseA(arriba)} 
 			
 		       else{
-			     self.moverseA(self.position().down(1), abajo)}
+			     self.moverseA(abajo)}
 		  }else{
 			
 		      if(carpincho.position().x() > self.position().x()){
-			   self.moverseA(self.position().right(1), derecha)} 
+			   self.moverseA(derecha)} 
 			
 		         else{
-			      self.moverseA(self.position().left(1), izquierda)} 
+			      self.moverseA(izquierda)} 
 	          }				
 	}
 	

@@ -18,8 +18,8 @@ describe"Modo carpincho"{
 }
 	
 	test "si el carpincho se mueve a la izquierda su imagen se cambia"{
-		carpincho.moverseA(game.at(15,14),derecha)
-		carpincho.moverseA(carpincho.position().left(1), izquierda)
+		carpincho.moverseA(derecha)
+		carpincho.moverseA(izquierda)
 		assert.equals(carpincho.image(), "carpincho left.png")
 	}
 }
@@ -34,9 +34,9 @@ describe"Modo cazar"{
 
 describe "modo 2 jugadores"{
 	test "si los 2 jugadores colisionan se termina el juego"{
-		carpincho.moverseA(game.at(10,10),derecha) 
-		yaguarete.moverseA(game.at(11, 10),derecha)
-		yaguarete.moverseA(yaguarete.position().left(1), izquierda)
+		carpincho.moverseA(derecha) 
+		yaguarete.moverseA(derecha)
+		yaguarete.moverseA(izquierda)
 		assert.that(carpincho.perdiste())
 	}
 	
@@ -49,7 +49,7 @@ describe "modo 2 jugadores"{
 }
 	test "el yaguarete no se puede mover si está al lado de una pared"{
 		game.addVisual(new Muro(position = game.at(20,19)))
-		carpincho.moverseA(game.at(19,19), derecha)
+		carpincho.moverseA(derecha)
 		assert.notThat(carpincho.puedeMoverAl(derecha))
 	
 }

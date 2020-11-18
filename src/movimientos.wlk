@@ -5,17 +5,17 @@ import buffs.*
 
 object keyConfig{
 	method jugador1(personaje){
-		keyboard.w().onPressDo({personaje.moverseA(personaje.position().up(1), arriba)})
-		keyboard.s().onPressDo({personaje.moverseA(personaje.position().down(1), abajo)})
-		keyboard.a().onPressDo({personaje.moverseA(personaje.position().left(1), izquierda)})
-		keyboard.d().onPressDo({personaje.moverseA(personaje.position().right(1), derecha)})
+		keyboard.w().onPressDo({personaje.moverseA(arriba)})
+		keyboard.s().onPressDo({personaje.moverseA(abajo)})
+		keyboard.a().onPressDo({personaje.moverseA(izquierda)})
+		keyboard.d().onPressDo({personaje.moverseA(derecha)})
 	}
 	
 	method jugador2(personaje){
-		keyboard.up().onPressDo({personaje.moverseA(personaje.position().up(1), arriba)})
-		keyboard.down().onPressDo({personaje.moverseA(personaje.position().down(1), abajo)})
-		keyboard.left().onPressDo({personaje.moverseA(personaje.position().left(1), izquierda)})
-		keyboard.right().onPressDo({personaje.moverseA(personaje.position().right(1), derecha)})
+		keyboard.up().onPressDo({personaje.moverseA(arriba)})
+		keyboard.down().onPressDo({personaje.moverseA(abajo)})
+		keyboard.left().onPressDo({personaje.moverseA(izquierda)})
+		keyboard.right().onPressDo({personaje.moverseA(derecha)})
 }
 
 }
